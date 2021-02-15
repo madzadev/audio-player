@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Player } from 'audio-player-3'
-import 'audio-player-3/dist/index.css'
+import { Player } from '@madzadev/audio-player'
+import '@madzadev/audio-player/dist/index.css'
 
 const tracks = [
   {

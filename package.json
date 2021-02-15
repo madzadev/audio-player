@@ -1,10 +1,10 @@
 {
-  "name": "audio-player-3",
+  "name": "@madzadev/audio-player",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "React audio player by Madza",
   "author": "madzadev",
   "license": "MIT",
-  "repository": "madzadev/audio-player-3",
+  "repository": "madzadev/audio-player",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

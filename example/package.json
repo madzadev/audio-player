@@ -1,7 +1,7 @@
 {
-  "name": "audio-player-3-example",
+  "name": "@madzadev/audio-player-example",
   "homepage": ".",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
@@ -13,7 +13,7 @@
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-scripts": "file:../node_modules/react-scripts",
-    "audio-player-3": "file:.."
+    "@madzadev/audio-player": "file:.."
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"
