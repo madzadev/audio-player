@@ -1,4 +1,5 @@
-import styles from "./LoopCurrent.module.css";
+import React from 'react'
+import styles from './LoopCurrent.module.css'
 
 const LoopCurrent = (props) => {
   return (
@@ -7,7 +8,7 @@ const LoopCurrent = (props) => {
       src={props.src}
       onClick={props.onClick}
     />
-  );
-};
+  )
+}
 
-export default LoopCurrent;
+export default LoopCurrent

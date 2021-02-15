@@ -1,7 +1,8 @@
-import styles from "./PageTemplate.module.css";
+import React from 'react'
+import styles from './PageTemplate.module.css'
 
 const PageTemplate = ({ children }) => {
-  return <div className={styles.wrapper}>{children}</div>;
-};
+  return <div className={styles.wrapper}>{children}</div>
+}
 
-export default PageTemplate;
+export default PageTemplate

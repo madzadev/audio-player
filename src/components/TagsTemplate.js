@@ -1,7 +1,8 @@
-import styles from "./TagsTemplate.module.css";
+import styles from './TagsTemplate.module.css'
+import React from 'react'
 
 const TagsTemplate = ({ children }) => {
-  return <div className={styles.wrapper}>{children}</div>;
-};
+  return <div className={styles.wrapper}>{children}</div>
+}
 
-export default TagsTemplate;
+export default TagsTemplate

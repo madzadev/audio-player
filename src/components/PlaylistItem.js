@@ -1,9 +1,10 @@
-import styles from "./PlaylistItem.module.css";
+import styles from './PlaylistItem.module.css'
+import React from 'react'
 
 const PlaylistItem = (props) => {
   return (
     <p
-      className={props.className == "active" ? styles.active : styles.track}
+      className={props.className == 'active' ? styles.active : styles.track}
       data-key={props.data_key}
       src={props.src}
       title={props.title}
@@ -11,7 +12,7 @@ const PlaylistItem = (props) => {
     >
       {props.title}
     </p>
-  );
-};
+  )
+}
 
-export default PlaylistItem;
+export default PlaylistItem
