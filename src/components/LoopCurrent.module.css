@@ -1,0 +1,16 @@
+.loop_current {
+  width: 26px;
+  height: 26px;
+  transition: transform 0.2s;
+}
+
+.loop_current:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 600px) {
+  .loop_current {
+    display: none;
+  }
+}

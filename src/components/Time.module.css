@@ -1,0 +1,17 @@
+.time {
+  font-family: "Varela Round", sans-serif;
+  color: white;
+  text-align: right;
+  font-size: 30px;
+  /* border: 1px solid white; */
+
+  margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .time {
+    width: 100%;
+    margin: 0 auto;
+    display: none;
+  }
+}

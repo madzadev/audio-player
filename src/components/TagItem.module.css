@@ -1,0 +1,38 @@
+.tag {
+  color: rgb(255, 255, 255);
+  height: 40px;
+  min-width: 100px;
+  background-color: var(--purple);
+  display: inline-grid;
+  place-items: center;
+  margin: 5px 5px;
+  transition: transform 0.2s;
+  padding: 0 10px;
+  font-family: "Varela Round", sans-serif;
+
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.active {
+  color: rgb(255, 255, 255);
+  height: 40px;
+  min-width: 100px;
+  display: inline-grid;
+  place-items: center;
+  margin: 0 5px;
+  background-color: var(--lightPurple);
+  transition: transform 0.3s;
+  padding: 0 10px;
+  font-family: "Varela Round", sans-serif;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 18px;
+  /* box-shadow: 5px 5px 17px #3c30db, -5px -5px 17px #4034ed; */
+}
+
+.tag:hover {
+  background-color: var(--lightPurple);
+  cursor: pointer;
+  transform: scale(1.1);
+}

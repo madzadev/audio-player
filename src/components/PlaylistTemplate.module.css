@@ -1,0 +1,26 @@
+.wrapper {
+  width: 90%;
+  margin: 20px auto 90px auto;
+  max-height: 425px;
+  overflow-x: hidden;
+  padding-right: 10px;
+  font-family: "Quicksand", sans-serif;
+  /* border: 1px solid grey; */
+  /* padding-bottom: 20px; */
+}
+
+/* width */
+.wrapper::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.wrapper::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+.wrapper::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+}

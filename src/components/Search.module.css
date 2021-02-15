@@ -1,0 +1,12 @@
+.search {
+  font-family: "Quicksand", sans-serif;
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  width: 90%;
+  margin-bottom: 10px;
+  background-color: var(--grey);
+  color: white;
+  padding-left: 20px;
+  border-radius: 10px;
+}

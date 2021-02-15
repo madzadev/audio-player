@@ -1,0 +1,14 @@
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  color: white;
+  padding: 0 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 0;
+  }
+}
