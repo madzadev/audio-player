@@ -1,30 +1,60 @@
-# audio-player-3
+# React audio player
 
-> Made with create-react-library
+GIF image goes here
 
-[![NPM](https://img.shields.io/npm/v/audio-player-3.svg)](https://www.npmjs.com/package/audio-player-3) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+## Installation
 
-## Install
-
-```bash
-npm install --save audio-player-3
+```javascript
+ npm install @madzadev/audio-player
 ```
 
 ## Usage
 
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'audio-player-3'
-import 'audio-player-3/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+```javascript
+import Player from 'audio-player'
 ```
 
-## License
+```javascript
+const tracks = [
+  {
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    title: "Madza - AAAAAAA",
+    tags: ["edm"],
+  },
+  {
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    title: "Madza - BBBBBB",
+    tags: ["chill"],
+  },
+  {
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3mp3",
+    title: "Madza - CCCC",
+    tags: ["bass"],
+  },
+];
 
-MIT © [madzadev](https://github.com/madzadev)
+<Player source={tracks}>
+```
+
+## Features
+
+Play/Pause
+Next/Previous tracks
+Loop audio
+Shuffle play
+Drag progress bar
+Volume control
+Clickable playlist
+Filter audio files based on genre
+Search audio files by title
+Responsive design
+
+## Options
+
+## Color Schemes
+
+Images goes here.
+
+## Support
+
+The player is hooks-based, and will work with React 16.8.0 ('the one with hooks') or higher.
