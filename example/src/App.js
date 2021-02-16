@@ -28,6 +28,10 @@ const App = () => {
     <>
       <Header />
       <Player tracks={tracks} />
+      <h1>Installation</h1>
+      <h1>Usage</h1>
+      <h1>Options</h1>
+      <h1>Features</h1>
       <Footer />
     </>
   )
