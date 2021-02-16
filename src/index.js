@@ -29,6 +29,7 @@ import shuffleAllBtn from 'icons/shuffle_all.png'
 import shuffleNoneBtn from 'icons/shuffle_none.png'
 
 export const Player = ({ tracks }) => {
+  // ! Next click on loop shuffled
   const [query, updateQuery] = useState('')
 
   let playlist = []
