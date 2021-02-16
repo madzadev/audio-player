@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 import { Player } from '@madzadev/audio-player'
 import '@madzadev/audio-player/dist/index.css'
@@ -24,8 +26,9 @@ const tracks = [
 const App = () => {
   return (
     <>
-      <h1>This is my audio player</h1>
+      <Header />
       <Player tracks={tracks} />
+      <Footer />
     </>
   )
 }
