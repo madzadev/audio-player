@@ -4,7 +4,8 @@ import styles from './Header.module.css'
 const Header = () => {
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>The Player for your Music</h1>
+      <h1 className={styles.title}>React Player for your Music</h1>
+      <p className={styles.description}>Based on hooks, requires v.16.8+</p>
     </div>
   )
 }

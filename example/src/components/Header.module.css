@@ -1,9 +1,16 @@
 .wrapper {
-  background-color: rgb(24, 24, 24);
+  /* background-color: rgb(24, 24, 24); */
   /* padding: 10px; */
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .title {
-  color: white;
+  margin: 0;
+  /* color: white; */
+  /* font-weight: bold; */
+}
+
+.description {
+  margin: 0;
 }
