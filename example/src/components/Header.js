@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-      <h1>Header title</h1>
+      <h1>React component for your Music 🎵</h1>
     </div>
   )
 }
