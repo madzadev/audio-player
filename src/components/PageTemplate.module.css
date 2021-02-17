@@ -4,7 +4,7 @@
   color: white;
   padding: 0 20px;
   position: relative;
-  min-height: 100vh;
+  border: 1px solid red;
 }
 
 @media only screen and (max-width: 600px) {

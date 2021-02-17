@@ -1,4 +1,5 @@
 import React from 'react'
+import Wrapper from './components/Wrapper'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -25,8 +26,8 @@ const tracks = [
 
 const App = () => {
   return (
-    <>
-      <Header />
+<Wrapper>
+<Header />
       <Player tracks={tracks} />
       <h1>Installation</h1>
       <h1>Usage</h1>
@@ -34,7 +35,7 @@ const App = () => {
       <h1>Features</h1>
       <h1>Color schemas</h1>
       <Footer />
-    </>
+  </Wrapper>
   )
 }
 
