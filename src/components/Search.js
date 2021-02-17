@@ -3,7 +3,7 @@ import React from 'react'
 
 const Search = ({ onChange, value, placeholder }) => {
   return (
-    <div>
+    <div >
       <input
         type='text'
         className={styles.search}

@@ -30,7 +30,10 @@ const App = () => {
 <Header />
       <Player tracks={tracks} />
       <h1>Installation</h1>
+      <p>npm install @madzadev/audio-player</p>
       <h1>Usage</h1>
+      <p>import Player from '@madzadev/audio-player'</p>
+
       <h1>Options</h1>
       <h1>Features</h1>
       <h1>Color schemas</h1>
