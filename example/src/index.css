@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
   background-color: #b8c6db;
   background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 }
 
-code > pre {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  /* background-color: black; */
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+pre {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }

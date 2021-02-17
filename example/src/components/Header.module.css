@@ -1,0 +1,9 @@
+.wrapper {
+  background-color: rgb(24, 24, 24);
+  /* padding: 10px; */
+  text-align: center;
+}
+
+.title {
+  color: white;
+}

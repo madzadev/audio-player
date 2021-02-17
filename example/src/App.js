@@ -33,7 +33,7 @@ const App = () => {
       <Header />
       <Player tracks={tracks} />
       <h1>Installation</h1>
-      <SyntaxHighlighter language='javascript' style={dracula}>
+      <SyntaxHighlighter language='bash' style={dracula}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
       <h1>Usage</h1>
@@ -42,24 +42,31 @@ const App = () => {
       </SyntaxHighlighter>
       <SyntaxHighlighter language='javascript' style={dracula}>
         {`const tracks = [
-  {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    title: 'Madza - AAAAAAA',
-    tags: ['edm']
-  },
-  {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    title: 'Madza - BBBBBB',
-    tags: ['chill']
-  },
-  {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-    title: 'Madza - CCCC',
-    tags: ['bass']
-  }
-]`}
+          {
+            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            title: 'Madza - AAAAAAA',
+            tags: ['edm']
+          },
+          {
+            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            title: 'Madza - BBBBBB',
+            tags: ['chill']
+          },
+          {
+            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            title: 'Madza - CCCC',
+            tags: ['bass']
+          }
+        ]`}
+      </SyntaxHighlighter>
+      <SyntaxHighlighter language='jsx' style={dracula}>
+        {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
       <h1>Options</h1>
+      <p>Include tags: Yes/No</p>
+      <p>Include search: Yes/No</p>
+      <p>Include shuffle: Yes/No</p>
+      <p>Show playlist: Yes/No</p>
       <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
