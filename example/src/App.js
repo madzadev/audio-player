@@ -36,6 +36,7 @@ const App = () => {
 
       <h1>Options</h1>
       <h1>Features</h1>
+      Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar Volume control Clickable playlist Filter audio files based on genre Search audio files by title Responsive design
       <h1>Color schemas</h1>
       <Footer />
   </Wrapper>
