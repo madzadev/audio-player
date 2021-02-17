@@ -1,3 +1,7 @@
+.wrapper {
+  text-align: center;
+}
+
 .search {
   font-family: 'Quicksand', sans-serif;
   height: 40px;

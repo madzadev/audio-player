@@ -16,12 +16,12 @@ const tracks = [
     tags: ['edm']
   },
   {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
     title: 'Madza - BBBBBB',
     tags: ['chill']
   },
   {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
     title: 'Madza - CCCC',
     tags: ['bass']
   }
@@ -48,12 +48,12 @@ const App = () => {
             tags: ['edm']
           },
           {
-            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
             title: 'Madza - BBBBBB',
             tags: ['chill']
           },
           {
-            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
             title: 'Madza - CCCC',
             tags: ['bass']
           }
