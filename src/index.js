@@ -262,7 +262,6 @@ export const Player = ({ tracks }) => {
       )
           .sort((a, b) => (a.title > b.title ? 1 : -1))
           .sort((a, b) => a.title.includes('Remix') - b.title.includes('Remix'))
-
           .map((el, index) => {
             if (filter.length === 0 || filter.includes(el.tags[0])) {
               playlist.push(index)

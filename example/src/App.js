@@ -62,6 +62,7 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
+      <p>Source is the madatory prop.</p>
       <h1>Options</h1>
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>
         {`<Player
@@ -72,6 +73,8 @@ const App = () => {
         showPlaylist={false}
       />`}
       </SyntaxHighlighter>
+      <p>In the example above all the default values are displayed. Those are set even if you do not include them.</p>
+      <p>To change them, set the value to opposite.</p>
       {/* <Player
         tracks={tracks}
         includeTags={false}
@@ -88,6 +91,7 @@ const App = () => {
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design
       <h1>Color schemas</h1>
+      <p>The player uses 5 color palette.</p>
       <Footer />
     </Wrapper>
   )
