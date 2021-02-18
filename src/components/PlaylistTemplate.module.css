@@ -1,5 +1,5 @@
 .wrapper {
-  width: 90%;
+  width: 100%;
   margin: 20px auto 20px auto;
   max-height: 425px;
   min-height: 120px;
@@ -24,4 +24,10 @@
 .wrapper::-webkit-scrollbar-thumb {
   background: rgb(255, 255, 255);
   border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 90%;
+  }
 }
