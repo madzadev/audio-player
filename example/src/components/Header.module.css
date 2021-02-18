@@ -7,10 +7,12 @@
 
 .title {
   margin: 0;
+  font-size: 40px;
   /* color: white; */
   /* font-weight: bold; */
 }
 
 .description {
   margin: 0;
+  font-size: 18px;
 }

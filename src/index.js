@@ -28,7 +28,7 @@ import nextBtn from 'icons/next.png'
 import shuffleAllBtn from 'icons/shuffle_all.png'
 import shuffleNoneBtn from 'icons/shuffle_none.png'
 
-export const Player = ({ tracks }) => {
+export const Player = ({ tracks, includeTags=true }) => {
   // ! Next click on loop shuffled
   const [query, updateQuery] = useState('')
 
@@ -181,7 +181,7 @@ export const Player = ({ tracks }) => {
 
   return (
     <PageTemplate>
-      <TagsTemplate>
+      {includeTags&&<TagsTemplate>
         {tracks
           .filter(
             (track, index, array) =>
@@ -203,7 +203,7 @@ export const Player = ({ tracks }) => {
               />
             )
           })}
-      </TagsTemplate>
+      </TagsTemplate>}
       <Search
         value={query}
         onChange={(e) => updateQuery(e.target.value.toLowerCase())}
