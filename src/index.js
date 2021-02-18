@@ -18,7 +18,6 @@ import PlaylistItem from './components/PlaylistItem'
 import TagsTemplate from './components/TagsTemplate'
 import TagItem from './components/TagItem'
 import Search from './components/Search'
-
 import loopCurrentBtn from 'icons/loop_current.png'
 import loopNoneBtn from 'icons/loop_none.png'
 import previousBtn from 'icons/previous.png'

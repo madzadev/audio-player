@@ -94,6 +94,7 @@ const App = () => {
       audio files by title Responsive design
       <h1>Color schemas</h1>
       <p>The player uses 5 color palette.</p>
+      <p>It's recommended to use with CMS like Contentful or DatoCMS.</p>
       <Footer />
     </Wrapper>
   )

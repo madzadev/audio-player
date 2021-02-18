@@ -10,6 +10,9 @@
     "url": "https://github.com/madzadev/audio-player.git"
   },
   "homepage": "https://github.com/madzadev/audio-player",
+  "bugs": {
+    "url": "https://github.com/madzadev/audio-player/issues"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
