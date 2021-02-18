@@ -257,6 +257,9 @@ export const Player = ({ tracks }) => {
 
       <PlaylistTemplate>
         {tracks
+        .filter((track) =>
+        track.title.toLowerCase().includes(query.toLowerCase())
+      )
           .sort((a, b) => (a.title > b.title ? 1 : -1))
           .sort((a, b) => a.title.includes('Remix') - b.title.includes('Remix'))
 
