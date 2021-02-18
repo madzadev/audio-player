@@ -4,9 +4,8 @@ import styles from './Footer.module.css'
 const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      <p>Component, example page and audio samples created by Madza. Icons from Icons8.</p>
-      <p>Contribute to open source</p>
-      <p>Listen to my music (SC and YT icons below)</p>
+      <h2>Component and audio samples created by Madza</h2>
+      <h4>Icons from Icons8</h4>
     </div>
   )
 }

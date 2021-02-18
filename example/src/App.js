@@ -69,13 +69,19 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>
         {`<Player
         tracks={tracks}
-        includeTags={false}
-        includeSearch={false}
-        includeShuffle={false}
-        showPlaylist={false}
+        includeTags={true}
+        includeSearch={true}
+        includeLoopAndShuffle={true}
+        showPlaylist={true}
+        autoPlayOnLoad={false}
+        autoPlayNextTrack={true}
+        
       />`}
       </SyntaxHighlighter>
-      <p>In the example above all the default values are displayed. Those are set even if you do not include them.</p>
+      <p>
+        In the example above the default values are displayed. Those are set
+        even if you do not include them.
+      </p>
       <p>To change them, set the value to opposite.</p>
       {/* <Player
         tracks={tracks}

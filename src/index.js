@@ -27,7 +27,13 @@ import nextBtn from 'icons/next.png'
 import shuffleAllBtn from 'icons/shuffle_all.png'
 import shuffleNoneBtn from 'icons/shuffle_none.png'
 
-export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlaylist=true }) => {
+export const Player = ({
+  tracks,
+  includeTags = true,
+  includeSearch = true,
+  showPlaylist = true,
+  autoPlayNextTrack = true
+}) => {
   // ! Next click on loop shuffled
   const [query, updateQuery] = useState('')
 
@@ -77,6 +83,7 @@ export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlayl
 
     setAudio(audio)
     setTitle(tracks[curTrack].title)
+    audio.autoplay = true
   }, [])
 
   const shufflePlaylist = (arr) => {
@@ -93,7 +100,7 @@ export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlayl
       if (shuffled) {
         playlist = shufflePlaylist(playlist)
       }
-      !looped ? next() : play()
+      !looped && autoPlayNextTrack ? next() : play()
     }
   }, [end])
 
@@ -180,34 +187,39 @@ export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlayl
 
   return (
     <PageTemplate>
-      {includeTags&&<TagsTemplate>
-        {tracks
-          .filter(
-            (track, index, array) =>
-              array.findIndex(
-                (el) => el.tags.toString() === track.tags.toString()
-              ) === index
-          )
-          .map((track, index) => {
-            return (
-              <TagItem
-                key={index}
-                className={
-                  filter.length !== 0 && filter.includes(track.tags.toString())
-                    ? 'active'
-                    : ''
-                }
-                tag={track.tags.toString()}
-                onClick={tagClickHandler}
-              />
+      {includeTags && (
+        <TagsTemplate>
+          {tracks
+            .filter(
+              (track, index, array) =>
+                array.findIndex(
+                  (el) => el.tags.toString() === track.tags.toString()
+                ) === index
             )
-          })}
-      </TagsTemplate>}
-      {includeSearch&&<Search
-        value={query}
-        onChange={(e) => updateQuery(e.target.value.toLowerCase())}
-        placeholder={`Search ${tracks.length} tracks...`}
-      />}
+            .map((track, index) => {
+              return (
+                <TagItem
+                  key={index}
+                  className={
+                    filter.length !== 0 &&
+                    filter.includes(track.tags.toString())
+                      ? 'active'
+                      : ''
+                  }
+                  tag={track.tags.toString()}
+                  onClick={tagClickHandler}
+                />
+              )
+            })}
+        </TagsTemplate>
+      )}
+      {includeSearch && (
+        <Search
+          value={query}
+          onChange={(e) => updateQuery(e.target.value.toLowerCase())}
+          placeholder={`Search ${tracks.length} tracks...`}
+        />
+      )}
       <PlayerTemplate>
         <div className={styles.title_time_wrapper}>
           <Title title={title} />
@@ -254,32 +266,34 @@ export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlayl
         </div>
       </PlayerTemplate>
 
+      {showPlaylist && (
+        <PlaylistTemplate>
+          {tracks
+            .filter((track) =>
+              track.title.toLowerCase().includes(query.toLowerCase())
+            )
+            .sort((a, b) => (a.title > b.title ? 1 : -1))
+            .sort(
+              (a, b) => a.title.includes('Remix') - b.title.includes('Remix')
+            )
+            .map((el, index) => {
+              if (filter.length === 0 || filter.includes(el.tags[0])) {
+                playlist.push(index)
 
-{showPlaylist&&<PlaylistTemplate>
-        {tracks
-        .filter((track) =>
-        track.title.toLowerCase().includes(query.toLowerCase())
-      )
-          .sort((a, b) => (a.title > b.title ? 1 : -1))
-          .sort((a, b) => a.title.includes('Remix') - b.title.includes('Remix'))
-          .map((el, index) => {
-            if (filter.length === 0 || filter.includes(el.tags[0])) {
-              playlist.push(index)
-
-              return (
-                <PlaylistItem
-                  className={curTrack === index ? 'active' : ''}
-                  key={index}
-                  data_key={index}
-                  title={el.title}
-                  src={el.url}
-                  onClick={playlistItemClickHandler}
-                />
-              )
-            }
-          })}
-      </PlaylistTemplate>}
-      
+                return (
+                  <PlaylistItem
+                    className={curTrack === index ? 'active' : ''}
+                    key={index}
+                    data_key={index}
+                    title={el.title}
+                    src={el.url}
+                    onClick={playlistItemClickHandler}
+                  />
+                )
+              }
+            })}
+        </PlaylistTemplate>
+      )}
     </PageTemplate>
   )
 }
