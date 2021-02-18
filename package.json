@@ -2,14 +2,18 @@
   "name": "@madzadev/audio-player",
   "version": "1.0.0",
   "description": "React audio player by Madza",
-  "keywords": ["react", "audio-player", "mp3-player"],
+  "keywords": [
+    "react",
+    "audio-player",
+    "mp3-player"
+  ],
   "author": "Madza <hi@madza.dev> (http://madza.dev)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/madzadev/audio-player.git"
   },
-  "homepage": "https://github.com/madzadev/audio-player",
+  "homepage": "https://audioplayer-madza.netlify.app",
   "bugs": {
     "url": "https://github.com/madzadev/audio-player/issues"
   },
