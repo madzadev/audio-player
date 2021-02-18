@@ -2,9 +2,14 @@
   "name": "@madzadev/audio-player",
   "version": "1.0.0",
   "description": "React audio player by Madza",
-  "author": "madzadev",
+  "keywords": ["react", "audio-player", "mp3-player"],
+  "author": "Madza <hi@madza.dev> (http://madza.dev)",
   "license": "MIT",
-  "repository": "madzadev/audio-player",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madzadev/audio-player.git"
+  },
+  "homepage": "https://github.com/madzadev/audio-player",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

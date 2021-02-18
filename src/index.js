@@ -28,7 +28,7 @@ import nextBtn from 'icons/next.png'
 import shuffleAllBtn from 'icons/shuffle_all.png'
 import shuffleNoneBtn from 'icons/shuffle_none.png'
 
-export const Player = ({ tracks, includeTags=true }) => {
+export const Player = ({ tracks, includeTags=true, includeSearch=true, showPlaylist=true }) => {
   // ! Next click on loop shuffled
   const [query, updateQuery] = useState('')
 
@@ -204,11 +204,11 @@ export const Player = ({ tracks, includeTags=true }) => {
             )
           })}
       </TagsTemplate>}
-      <Search
+      {includeSearch&&<Search
         value={query}
         onChange={(e) => updateQuery(e.target.value.toLowerCase())}
         placeholder={`Search ${tracks.length} tracks...`}
-      />
+      />}
       <PlayerTemplate>
         <div className={styles.title_time_wrapper}>
           <Title title={title} />
@@ -255,7 +255,8 @@ export const Player = ({ tracks, includeTags=true }) => {
         </div>
       </PlayerTemplate>
 
-      <PlaylistTemplate>
+
+{showPlaylist&&<PlaylistTemplate>
         {tracks
         .filter((track) =>
         track.title.toLowerCase().includes(query.toLowerCase())
@@ -278,7 +279,8 @@ export const Player = ({ tracks, includeTags=true }) => {
               )
             }
           })}
-      </PlaylistTemplate>
+      </PlaylistTemplate>}
+      
     </PageTemplate>
   )
 }

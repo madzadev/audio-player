@@ -31,7 +31,7 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      {/* includeTags */}
+      {/* includeTags, includeSearch, showPlaylist */}
       <Player tracks={tracks} />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={duotoneSpace}>
