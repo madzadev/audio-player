@@ -62,7 +62,8 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
-      <p>Source is the madatory prop.</p>
+      <p>Include the component in your render block.</p>
+      <p>Note, that `tracks` is the madatory prop.</p>
       <h1>Options</h1>
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>
         {`<Player
