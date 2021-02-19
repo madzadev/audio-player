@@ -108,6 +108,22 @@ const App = () => {
       audio files by title Responsive design
       <h1>Color schemas</h1>
       <p>The player uses 5 color palette.</p>
+      <SyntaxHighlighter language='javascript' style={duotoneSpace}>
+        {`const colors = ':root {
+          --background: #151616;
+          --purple: #067c29;
+          --lightPurple: #2cc0a0;
+          --grey: #18191f;
+          --light-grey: #576180;
+          /* --light-grey: #5e6fa1; */
+      }'`}
+      </SyntaxHighlighter>
+      <SyntaxHighlighter language='jsx' style={duotoneSpace}>
+        {`<Player
+        tracks={tracks}
+        customColorScheme={colors}
+      />`}
+      </SyntaxHighlighter>
       <p>It's recommended to use with CMS like Contentful or DatoCMS.</p>
       <Footer />
     </Wrapper>
