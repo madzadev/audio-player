@@ -35,7 +35,8 @@ export const Player = ({
   includeSearch = true,
   showPlaylist = true,
   autoPlayOnLoad = false,
-  autoPlayNextTrack = true
+  autoPlayNextTrack = true,
+  customColorScheme
 }) => {
   // ! Next click on loop shuffled
   const [query, updateQuery] = useState('')
@@ -58,14 +59,7 @@ export const Player = ({
   let [curTrack, setCurTrack] = useState(0)
 
   const GlobalStyles = createGlobalStyle`
-  :root {
-  --background: #151616;
-  --purple: #067c29;
-  --lightPurple: #2cc0a0;
-  --grey: #18191f;
-  --light-grey: #576180;
-  /* --light-grey: #5e6fa1; */
-}
+${customColorScheme}
 `
 
   // Helper function

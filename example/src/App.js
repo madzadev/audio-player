@@ -28,11 +28,19 @@ const tracks = [
 ]
 
 const App = () => {
+  const colors = `:root {
+  --background: #151616;
+  --purple: #067c29;
+  --lightPurple: #2cc0a0;
+  --grey: #18191f;
+  --light-grey: #576180;
+  /* --light-grey: #5e6fa1; */
+}`
   return (
     <Wrapper>
       <Header />
       {/* includeTags, includeSearch, showPlaylist */}
-      <Player tracks={tracks} />
+      <Player tracks={tracks} customColorScheme={colors} />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={duotoneSpace}>
         {`npm install @madzadev/audio-player`}
