@@ -1,9 +1,5 @@
 .title {
   color: white;
-  /* font-family: "Varela Round", sans-serif; */
-  /* border: 1px solid white; */
-  /* font-family: "Poppins", sans-serif; */
-
   font-size: 28px;
   margin: 0;
 }
@@ -13,6 +9,5 @@
     width: 100%;
     margin-bottom: 0;
     text-align: center;
-    /* margin-bottom: 20px; */
   }
 }

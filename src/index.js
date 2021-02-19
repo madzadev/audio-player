@@ -32,6 +32,7 @@ export const Player = ({
   includeTags = true,
   includeSearch = true,
   showPlaylist = true,
+  autoPlayOnLoad = false,
   autoPlayNextTrack = true
 }) => {
   // ! Next click on loop shuffled
@@ -83,7 +84,11 @@ export const Player = ({
 
     setAudio(audio)
     setTitle(tracks[curTrack].title)
-    audio.autoplay = true
+    // audio.muted = true
+    // audio.autoplay = true
+    // if (audio !== null) {
+    //   audio.play()
+    // }
   }, [])
 
   const shufflePlaylist = (arr) => {

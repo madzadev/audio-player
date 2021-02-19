@@ -1,12 +1,8 @@
 .track {
   color: var(--light-grey);
-  /* font-family: "Varela Round", sans-serif; */
   font-family: 'Poppins', sans-serif;
-
-  /* font-family: "Inter", sans-serif; */
   text-align: center;
   font-size: 16px;
-  /* border-bottom: 1px solid var(--purple); */
   margin: 5px 0;
   padding: 3px 0;
   cursor: pointer;
@@ -20,8 +16,6 @@
 
 .active {
   color: white;
-  /* font-family: "Varela Round", sans-serif; */
-  /* font-weight: bold; */
   text-align: center;
   font-size: 18px;
   margin: 5px 0;
@@ -37,7 +31,6 @@
 
 .track:hover {
   color: white;
-  /* font-weight: bold; */
   background-color: var(--grey);
   border-radius: 5px;
 }
