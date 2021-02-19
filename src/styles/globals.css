@@ -23,12 +23,3 @@ a {
 * {
   box-sizing: border-box;
 }
-
-:root {
-  --background: #151616;
-  --purple: #3e32e4;
-  --lightPurple: #6e65f1;
-  --grey: #18191f;
-  --light-grey: #576180;
-  /* --light-grey: #5e6fa1; */
-}

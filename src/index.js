@@ -1,5 +1,7 @@
 import styles from './styles/Music.module.css'
+import { createGlobalStyle } from 'styled-components'
 import React, { useState, useEffect, useRef } from 'react'
+
 import PageTemplate from './components/PageTemplate'
 import PlayerTemplate from './components/PlayerTemplate'
 import Title from './components/Title'
@@ -54,6 +56,17 @@ export const Player = ({
 
   const [filter, setFilter] = useState([])
   let [curTrack, setCurTrack] = useState(0)
+
+  const GlobalStyles = createGlobalStyle`
+  :root {
+  --background: #151616;
+  --purple: #067c29;
+  --lightPurple: #2cc0a0;
+  --grey: #18191f;
+  --light-grey: #576180;
+  /* --light-grey: #5e6fa1; */
+}
+`
 
   // Helper function
   const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4)
@@ -192,6 +205,7 @@ export const Player = ({
 
   return (
     <PageTemplate>
+      <GlobalStyles />
       {includeTags && (
         <TagsTemplate>
           {tracks
