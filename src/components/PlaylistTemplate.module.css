@@ -6,8 +6,6 @@
   overflow-x: hidden;
   padding-right: 10px;
   font-family: 'Quicksand', sans-serif;
-  /* border: 1px solid grey; */
-  /* padding-bottom: 20px; */
 }
 
 /* width */
@@ -22,7 +20,7 @@
 
 /* Handle */
 .wrapper::-webkit-scrollbar-thumb {
-  background: rgb(255, 255, 255);
+  background: var(--primaryText);
   border-radius: 10px;
 }
 

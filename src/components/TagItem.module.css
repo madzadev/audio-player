@@ -1,5 +1,5 @@
 .tag {
-  color: rgb(255, 255, 255);
+  color: var(--primaryText);
   height: 40px;
   min-width: 100px;
   background-color: var(--buttonColor);
@@ -9,13 +9,12 @@
   transition: transform 0.2s;
   padding: 0 10px;
   font-family: 'Varela Round', sans-serif;
-
   border-radius: 10px;
   font-size: 18px;
 }
 
 .active {
-  color: rgb(255, 255, 255);
+  color: var(--primaryText);
   height: 40px;
   min-width: 100px;
   display: inline-grid;
@@ -28,7 +27,6 @@
   cursor: pointer;
   border-radius: 10px;
   font-size: 18px;
-  /* box-shadow: 5px 5px 17px #3c30db, -5px -5px 17px #4034ed; */
 }
 
 .tag:hover {

@@ -1,10 +1,8 @@
 .time {
-  font-family: "Varela Round", sans-serif;
-  color: white;
+  font-family: 'Varela Round', sans-serif;
+  color: var(--primaryText);
   text-align: right;
   font-size: 30px;
-  /* border: 1px solid white; */
-
   margin: 0;
 }
 

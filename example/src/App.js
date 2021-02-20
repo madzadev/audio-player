@@ -33,6 +33,7 @@ const App = () => {
   --progressBackground: #151616;
   --buttonColor: #067c29;
   --tagsHoverColor: #2cc0a0;
+  --primaryColor: #ffffff;
   --secondaryText: #696969;
 }`
   return (
@@ -111,6 +112,7 @@ const App = () => {
           --progressBackground: #151616;
           --buttonColor: #067c29;
           --tagsHoverColor: #2cc0a0;
+          --primaryColor: #ffffff;
           --secondaryText: #696969;
       }'`}
       </SyntaxHighlighter>
