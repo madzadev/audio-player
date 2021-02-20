@@ -71,11 +71,11 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
-      <p>
+      <p className='note'>
         'tracks' is the mandatory prop and requires to pass in an array
         consisting of objects with `url`, `title` and `tags` keys.
       </p>
-      <p>Each object in the array represents single track.</p>
+      <p className='note'>Each object in the array represents single track.</p>
       <h1>Options</h1>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
@@ -86,13 +86,15 @@ const App = () => {
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
-      <p>In the above example the default values are displayed.</p>
+      <p className='note'>
+        In the above example the default values are displayed.
+      </p>
       <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design
       <h1>Color schemas</h1>
-      <p>The player uses 5 color palette.</p>
+      <p className='note'>The player uses 5 color palette.</p>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`const colors = 'html {
           --playerBackground: #18191f;
@@ -110,11 +112,11 @@ const App = () => {
       />`}
       </SyntaxHighlighter>
       <h1>Final notes</h1>
-      <p>
+      <p className='note'>
         It's recommended to use CMS like Contentful or DatoCMS to manage you
         audio files and access them via API.
       </p>
-      <p>
+      <p className='note'>
         Other alternatives include Google Drive and Dropbox or store you audio
         files directly in the project.
       </p>
