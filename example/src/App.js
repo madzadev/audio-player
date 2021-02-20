@@ -7,7 +7,7 @@ import { Player } from '@madzadev/audio-player'
 import '@madzadev/audio-player/dist/index.css'
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { duotoneSpace } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const tracks = [
   {
@@ -33,7 +33,7 @@ const App = () => {
   --progressBackground: #151616;
   --buttonColor: #067c29;
   --tagsHoverColor: #2cc0a0;
-  --secondaryText: #576180;
+  --secondaryText: #696969;
 }`
   return (
     <Wrapper>
@@ -41,14 +41,14 @@ const App = () => {
       {/* includeTags, includeSearch, showPlaylist */}
       <Player tracks={tracks} customColorScheme={colors} />
       <h1>Installation</h1>
-      <SyntaxHighlighter language='bash' style={duotoneSpace}>
+      <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
       <h1>Usage</h1>
-      <SyntaxHighlighter language='javascript' style={duotoneSpace}>
+      <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`import Player from '@madzadev/audio-player'`}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='javascript' style={duotoneSpace}>
+      <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`const tracks = [
           {
             url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
@@ -67,22 +67,20 @@ const App = () => {
           }
         ]`}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='jsx' style={duotoneSpace}>
+      <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
       <p>Include the component in your render block.</p>
       <p>Note, that `tracks` is the madatory prop.</p>
       <h1>Options</h1>
-      <SyntaxHighlighter language='jsx' style={duotoneSpace}>
+      <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
         tracks={tracks}
         includeTags={true}
         includeSearch={true}
-        includeLoopAndShuffle={true}
         showPlaylist={true}
         autoPlayOnLoad={false}
         autoPlayNextTrack={true}
-        
       />`}
       </SyntaxHighlighter>
       <p>
@@ -107,16 +105,16 @@ const App = () => {
       audio files by title Responsive design
       <h1>Color schemas</h1>
       <p>The player uses 5 color palette.</p>
-      <SyntaxHighlighter language='javascript' style={duotoneSpace}>
+      <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`const colors = ':root {
           --playerBackground: #18191f;
           --progressBackground: #151616;
           --buttonColor: #067c29;
           --tagsHoverColor: #2cc0a0;
-          --secondaryText: #576180;
+          --secondaryText: #696969;
       }'`}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='jsx' style={duotoneSpace}>
+      <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
         tracks={tracks}
         customColorScheme={colors}
