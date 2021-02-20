@@ -28,7 +28,7 @@ const tracks = [
 ]
 
 const App = () => {
-  const colors = `:root {
+  const colors = `html{
   --playerBackground: #18191f;
   --progressBackground: #151616;
   --buttonColor: #067c29;
@@ -71,8 +71,7 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
-      <p>Include the component in your render block.</p>
-      <p>Note, that `tracks` is the madatory prop.</p>
+      <p>'tracks' is the mandatory prop.</p>
       <h1>Options</h1>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
@@ -80,26 +79,10 @@ const App = () => {
         includeTags={true}
         includeSearch={true}
         showPlaylist={true}
-        autoPlayOnLoad={false}
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
-      <p>
-        In the example above the default values are displayed. Those are set
-        even if you do not include them.
-      </p>
-      <p>To change them, set the value to opposite.</p>
-      {/* <Player
-        tracks={tracks}
-        includeTags={false}
-        includeSearch={false}
-        includeShuffle={false}
-        showPlaylist={false}
-      /> */}
-      {/* <p>Include tags: Yes/No</p>
-      <p>Include search: Yes/No</p>
-      <p>Include shuffle: Yes/No</p>
-      <p>Show playlist: Yes/No</p> */}
+      <p>In the above example the default values are displayed.</p>
       <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
@@ -107,7 +90,7 @@ const App = () => {
       <h1>Color schemas</h1>
       <p>The player uses 5 color palette.</p>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
-        {`const colors = ':root {
+        {`const colors = 'html {
           --playerBackground: #18191f;
           --progressBackground: #151616;
           --buttonColor: #067c29;

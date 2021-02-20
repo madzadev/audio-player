@@ -17,7 +17,7 @@ const Progress = (props) => {
         // style={{
         //   background: `linear-gradient(90deg, #ffffff ${Math.floor(
         //     props.value
-        //   )}%, #151616 ${Math.floor(props.value)}%)`,
+        //   )}%, #151616 ${Math.floor(props.value)}%)`
         // }}
       />
     </div>
