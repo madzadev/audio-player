@@ -26,7 +26,7 @@ h4 {
 }
 
 .link {
-  color: rgb(94, 0, 182);
+  color: rgb(27, 61, 255);
 }
 
 pre {
@@ -41,5 +41,7 @@ code {
 
 hr {
   border: none;
-  border-bottom: 2px solid rgb(36, 36, 36);
+  border-bottom: 2px solid rgb(44, 44, 44);
+  width: 70%;
+  margin: 40px auto;
 }

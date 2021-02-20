@@ -106,28 +106,28 @@ const App = () => {
         For now, you can further customize the player by editing the colors
         variable below.
       </p>
-      <SyntaxHighlighter language='css' style={coldarkDark}>
-        {`const colors = 'html {
-          --tagsBackground: #18191f;
+      <SyntaxHighlighter language='javascript' style={coldarkDark}>
+        {`const colors = \`html {
+          --tagsBackground: #9440f3;
           --tagsText: #ffffff;
-          --tagsBackgroundHoverActive: #ffffff;
+          --tagsBackgroundHoverActive: #2cc0a0;
           --tagsTextHoverActive: #ffffff;
           --searchBackground: #18191f;
           --searchText: #ffffff;
           --playerBackground: #18191f;
-          --titleColor:#ffffff; 
+          --titleColor: #ffffff; 
           --timeColor: #ffffff;
-          --progressSlider:
-          --progressUsed: #151616;
-          --progressLeft:
-          --volumeSlider:
-          --volumeUsed: #151616;
-          --volumeLeft:
-          --playlistBackground:
-          --playlistText
-          --playlistBackgroundHoverActive
-          --playlistTextHoverActive
-      }'`}
+          --progressSlider: #9440f3;
+          --progressUsed: #ffffff;
+          --progressLeft: #151616;
+          --volumeSlider: #9440f3;
+          --volumeUsed: #ffffff;
+          --volumeLeft:  #151616;
+          --playlistBackground: #18191f;
+          --playlistText: #575a77;
+          --playlistBackgroundHoverActive:  #18191f;
+          --playlistTextHoverActive: #ffffff;
+      }\``}
       </SyntaxHighlighter>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player

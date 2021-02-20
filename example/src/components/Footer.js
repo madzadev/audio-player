@@ -15,7 +15,7 @@ const Footer = () => {
           Madza
         </a>
       </h2>
-      <h4>Check out my other music</h4>
+      <h4>All my music in YouTube and SoundCloud.</h4>
     </div>
   )
 }
