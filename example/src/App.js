@@ -71,7 +71,7 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
-      <p className='note'>
+      <p className='warning'>
         'tracks' is the mandatory prop and requires to pass in an array
         consisting of objects with `url`, `title` and `tags` keys.
       </p>
@@ -89,10 +89,10 @@ const App = () => {
       <p className='note'>
         In the above example the default values are displayed.
       </p>
-      <h1>Features</h1>
+      {/* <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
-      audio files by title Responsive design
+      audio files by title Responsive design */}
       <h1>Color schemas</h1>
       <p className='note'>The player uses 5 color palette.</p>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>

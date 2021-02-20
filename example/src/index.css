@@ -15,9 +15,18 @@ h4 {
   font-family: 'Montserrat', sans-serif;
 }
 
+.warning {
+  padding-left: 10px;
+  border-left: 5px solid tomato;
+}
+
 .note {
   padding-left: 10px;
   border-left: 5px solid rgb(255, 175, 55);
+}
+
+.link {
+  color: purple;
 }
 
 pre {
