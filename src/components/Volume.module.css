@@ -10,7 +10,7 @@
   width: 70%;
   height: 3px;
   border-radius: 5px;
-  background: var(--primaryText);
+  background: var(--primaryColor);
   outline: none;
   opacity: 1;
   -webkit-transition: 0.2s;

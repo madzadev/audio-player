@@ -1,5 +1,5 @@
 .tag {
-  color: var(--primaryText);
+  color: var(--primaryColor);
   height: 40px;
   min-width: 100px;
   background-color: var(--buttonColor);
@@ -14,7 +14,7 @@
 }
 
 .active {
-  color: var(--primaryText);
+  color: var(--primaryColor);
   height: 40px;
   min-width: 100px;
   display: inline-grid;

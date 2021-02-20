@@ -15,7 +15,7 @@
 }
 
 .active {
-  color: var(--primaryText);
+  color: var(--primaryColor);
   text-align: center;
   font-size: 18px;
   margin: 5px 0;
@@ -30,7 +30,7 @@
 }
 
 .track:hover {
-  color: var(--primaryText);
+  color: var(--primaryColor);
   background-color: var(--playerBackground);
   border-radius: 5px;
 }

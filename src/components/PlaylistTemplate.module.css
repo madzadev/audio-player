@@ -20,7 +20,7 @@
 
 /* Handle */
 .wrapper::-webkit-scrollbar-thumb {
-  background: var(--primaryText);
+  background: var(--primaryColor);
   border-radius: 10px;
 }
 
