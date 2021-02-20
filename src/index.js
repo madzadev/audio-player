@@ -30,7 +30,7 @@ import shuffleAllBtn from 'icons/shuffle_all.png'
 import shuffleNoneBtn from 'icons/shuffle_none.png'
 
 export const Player = ({
-  tracks,
+  trackList,
   includeTags = true,
   includeSearch = true,
   showPlaylist = true,
@@ -66,7 +66,7 @@ ${customColorScheme}
   const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4)
 
   useEffect(() => {
-    const audio = new Audio(tracks[curTrack].url)
+    const audio = new Audio(trackList[curTrack].url)
 
     const setAudioData = () => {
       setLength(audio.duration)
@@ -90,7 +90,7 @@ ${customColorScheme}
     audio.addEventListener('ended', setAudioEnd)
 
     setAudio(audio)
-    setTitle(tracks[curTrack].title)
+    setTitle(trackList[curTrack].title)
     // audio.muted = true
     // audio.autoplay = true
     // if (audio !== null) {
@@ -146,8 +146,8 @@ ${customColorScheme}
 
   useEffect(() => {
     if (audio != null) {
-      audio.src = tracks[curTrack].url
-      setTitle(tracks[curTrack].title)
+      audio.src = trackList[curTrack].url
+      setTitle(trackList[curTrack].title)
       play()
     }
   }, [curTrack])
@@ -202,7 +202,7 @@ ${customColorScheme}
       <GlobalStyles />
       {includeTags && (
         <TagsTemplate>
-          {tracks
+          {trackList
             .filter(
               (track, index, array) =>
                 array.findIndex(
@@ -230,7 +230,7 @@ ${customColorScheme}
         <Search
           value={query}
           onChange={(e) => updateQuery(e.target.value.toLowerCase())}
-          placeholder={`Search ${tracks.length} tracks...`}
+          placeholder={`Search ${trackList.length} tracks...`}
         />
       )}
       <PlayerTemplate>
@@ -281,7 +281,7 @@ ${customColorScheme}
 
       {showPlaylist && (
         <PlaylistTemplate>
-          {tracks
+          {trackList
             .filter((track) =>
               track.title.toLowerCase().includes(query.toLowerCase())
             )
@@ -317,7 +317,7 @@ ${customColorScheme}
 // });
 
 // export async function getStaticProps(context) {
-//   const tracks = await client
+//   const trackList = await client
 //     .getEntries({ content_type: "audio" })
 //     .then((response) => {
 //       return response.items;
@@ -325,7 +325,7 @@ ${customColorScheme}
 //     .catch(console.error);
 
 //   return {
-//     props: { tracks },
+//     props: { trackList },
 //   };
 // }
 

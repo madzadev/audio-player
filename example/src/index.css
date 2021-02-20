@@ -26,10 +26,20 @@ h4 {
 }
 
 .link {
-  color: purple;
+  color: rgb(94, 0, 182);
 }
 
 pre {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+}
+
+code {
+  background-color: rgb(212, 212, 212);
+  padding: 5px;
+}
+
+hr {
+  border: none;
+  border-bottom: 2px solid rgb(36, 36, 36);
 }
