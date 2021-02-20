@@ -105,7 +105,8 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
-      <p>It's recommended to use with CMS like Contentful or DatoCMS.</p>
+      <h1>Final notes</h1>
+      <p>It's recommended to use it with CMS like Contentful or DatoCMS.</p>
       <Footer />
     </Wrapper>
   )
