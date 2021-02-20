@@ -12,7 +12,7 @@
   height: 4px;
   border-radius: 5px;
   background: #ffffff;
-  background: var(--background);
+  background: var(--progressBackground);
   outline: none;
   opacity: 1;
   -webkit-transition: 0.2s;
@@ -25,14 +25,14 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--buttonColor);
   cursor: pointer;
   /* box-shadow: 5px 5px 17px #3c30db, -5px -5px 17px #4034ed; */
 }
 
 .slider::-webkit-slider-thumb:hover {
   background: rgb(255, 255, 255);
-  background: var(--purple);
+  background: var(--buttonColor);
 }
 
 .slider::-moz-range-thumb {

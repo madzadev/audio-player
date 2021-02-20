@@ -29,12 +29,11 @@ const tracks = [
 
 const App = () => {
   const colors = `:root {
-  --background: #151616;
-  --purple: #067c29;
-  --lightPurple: #2cc0a0;
-  --grey: #18191f;
-  --light-grey: #576180;
-  /* --light-grey: #5e6fa1; */
+  --playerBackground: #18191f;
+  --progressBackground: #151616;
+  --buttonColor: #067c29;
+  --tagsHoverColor: #2cc0a0;
+  --secondaryText: #576180;
 }`
   return (
     <Wrapper>
@@ -110,12 +109,11 @@ const App = () => {
       <p>The player uses 5 color palette.</p>
       <SyntaxHighlighter language='javascript' style={duotoneSpace}>
         {`const colors = ':root {
-          --background: #151616;
-          --purple: #067c29;
-          --lightPurple: #2cc0a0;
-          --grey: #18191f;
-          --light-grey: #576180;
-          /* --light-grey: #5e6fa1; */
+          --playerBackground: #18191f;
+          --progressBackground: #151616;
+          --buttonColor: #067c29;
+          --tagsHoverColor: #2cc0a0;
+          --secondaryText: #576180;
       }'`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language='jsx' style={duotoneSpace}>

@@ -2,13 +2,13 @@
   color: rgb(255, 255, 255);
   height: 40px;
   min-width: 100px;
-  background-color: var(--purple);
+  background-color: var(--buttonColor);
   display: inline-grid;
   place-items: center;
   margin: 5px 5px;
   transition: transform 0.2s;
   padding: 0 10px;
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
 
   border-radius: 10px;
   font-size: 18px;
@@ -21,10 +21,10 @@
   display: inline-grid;
   place-items: center;
   margin: 0 5px;
-  background-color: var(--lightPurple);
+  background-color: var(--tagsHoverColor);
   transition: transform 0.3s;
   padding: 0 10px;
-  font-family: "Varela Round", sans-serif;
+  font-family: 'Varela Round', sans-serif;
   cursor: pointer;
   border-radius: 10px;
   font-size: 18px;
@@ -32,7 +32,7 @@
 }
 
 .tag:hover {
-  background-color: var(--lightPurple);
+  background-color: var(--tagsHoverColor);
   cursor: pointer;
   transform: scale(1.1);
 }

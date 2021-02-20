@@ -19,20 +19,10 @@ a {
   box-sizing: border-box;
 }
 
-:root {
-  /* --background: #151616;
-  --purple: #f06515;
-  --lightPurple: #ff985d;
-  --grey: #18191f;
-  --light-grey: #576180; */
-  /* --light-grey: #5e6fa1; */
-}
-
 .title_time_wrapper {
   display: grid;
   grid-template-columns: auto 200px;
   margin: 30px 0 20px 0;
-  /* overflow: auto; */
 }
 
 .buttons_volume_wrapper {

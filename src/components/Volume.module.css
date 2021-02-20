@@ -12,7 +12,7 @@
   height: 3px;
   border-radius: 5px;
   background: #ffffff;
-  /* background: var(--background); */
+  /* background: var(--progressBackground); */
   outline: none;
   opacity: 1;
   -webkit-transition: 0.2s;
@@ -26,13 +26,13 @@
   height: 20px;
   border-radius: 50%;
   /* background: rgb(255, 255, 255); */
-  background: var(--purple);
+  background: var(--buttonColor);
   cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb:hover {
   /* background: rgb(255, 255, 255); */
-  background: var(--purple);
+  background: var(--buttonColor);
 }
 
 .slider::-moz-range-thumb {
