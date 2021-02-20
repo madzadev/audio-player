@@ -31,9 +31,9 @@ const App = () => {
   const colors = `html{
   --playerBackground: #18191f;
   --progressBackground: #151616;
-  --buttonColor: #067c29;
-  --tagsHoverColor: #2cc0a0;
-  --primaryColor: #ffffff;
+  --dragsAndTags: #067c29;
+  --tagsHover: #2cc0a0;
+  --primaryText: #ffffff;
   --secondaryText: #696969;
 }`
   return (
@@ -86,9 +86,7 @@ const App = () => {
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
-      <p className='note'>
-        In the above example the default values are displayed.
-      </p>
+      <p className='note'>The default values are displayed.</p>
       {/* <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
@@ -99,9 +97,9 @@ const App = () => {
         {`const colors = 'html {
           --playerBackground: #18191f;
           --progressBackground: #151616;
-          --buttonColor: #067c29;
-          --tagsHoverColor: #2cc0a0;
-          --primaryColor: #ffffff;
+          --dragsAndTags: #067c29;
+          --tagsHover: #2cc0a0;
+          --primaryText: #ffffff;
           --secondaryText: #696969;
       }'`}
       </SyntaxHighlighter>

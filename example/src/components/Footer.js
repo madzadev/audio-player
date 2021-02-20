@@ -6,7 +6,12 @@ const Footer = () => {
     <div className={styles.wrapper}>
       <h2>
         Component and audio samples created by{' '}
-        <a className='link' href='https://github.com/madzadev'>
+        <a
+          className='link'
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://github.com/madzadev'
+        >
           Madza
         </a>
       </h2>

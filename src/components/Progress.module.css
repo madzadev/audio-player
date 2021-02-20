@@ -23,12 +23,12 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--buttonColor);
+  background: var(--dragsAndTags);
   cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb:hover {
-  background: var(--buttonColor);
+  background: var(--dragsAndTags);
 }
 
 .slider::-moz-range-thumb {

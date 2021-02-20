@@ -1,8 +1,8 @@
 .tag {
-  color: var(--primaryColor);
+  color: var(--primaryText);
   height: 40px;
   min-width: 100px;
-  background-color: var(--buttonColor);
+  background-color: var(--dragsAndTags);
   display: inline-grid;
   place-items: center;
   margin: 5px 5px;
@@ -14,13 +14,13 @@
 }
 
 .active {
-  color: var(--primaryColor);
+  color: var(--primaryText);
   height: 40px;
   min-width: 100px;
   display: inline-grid;
   place-items: center;
   margin: 0 5px;
-  background-color: var(--tagsHoverColor);
+  background-color: var(--tagsHover);
   transition: transform 0.3s;
   padding: 0 10px;
   font-family: 'Varela Round', sans-serif;
@@ -30,7 +30,7 @@
 }
 
 .tag:hover {
-  background-color: var(--tagsHoverColor);
+  background-color: var(--tagsHover);
   cursor: pointer;
   transform: scale(1.1);
 }
