@@ -132,6 +132,12 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
+      <h1>Sizing</h1>
+      <p className='warning'>
+        The player is set to span 100% of the width of the container you include
+        in.
+      </p>
+      <p className='note'>The player is responsive for mobile devices.</p>
       <h1>Final notes</h1>
       <p className='warning'>
         It's recommended to use CMS like Contentful or DatoCMS to manage you
