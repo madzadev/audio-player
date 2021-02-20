@@ -98,10 +98,13 @@ const App = () => {
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design */}
       <h1>Color schemas</h1>
-      <p className='note'>The player uses 5 color palette by default.</p>
+      <p className='note'>
+        The player uses 5 color palette by default. Custom color schemes are
+        currently being designed.
+      </p>
       <p className='warning'>
-        You can further customize the player by editing the colors variable
-        below.
+        For now, you can further customize the player by editing the colors
+        variable below.
       </p>
       <SyntaxHighlighter language='css' style={coldarkDark}>
         {`const colors = 'html {
@@ -132,12 +135,15 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
-      <h1>Sizing</h1>
+      <h1>Sizing and Responsiveness</h1>
       <p className='warning'>
         The player is set to span 100% of the width of the container you include
-        in.
+        it in.
       </p>
-      <p className='note'>The player is responsive for mobile devices.</p>
+      <p className='note'>
+        Tags, loop and shuffle functionality is currently disabled in mobile
+        views.
+      </p>
       <h1>Final notes</h1>
       <p className='warning'>
         It's recommended to use CMS like Contentful or DatoCMS to manage you
