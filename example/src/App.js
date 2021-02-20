@@ -71,7 +71,11 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player tracks={tracks} />`}
       </SyntaxHighlighter>
-      <p>'tracks' is the mandatory prop.</p>
+      <p>
+        'tracks' is the mandatory prop and requires to pass in an array
+        consisting of objects with `url`, `title` and `tags` keys.
+      </p>
+      <p>Each object in the array represents single track.</p>
       <h1>Options</h1>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
@@ -106,7 +110,14 @@ const App = () => {
       />`}
       </SyntaxHighlighter>
       <h1>Final notes</h1>
-      <p>It's recommended to use it with CMS like Contentful or DatoCMS.</p>
+      <p>
+        It's recommended to use CMS like Contentful or DatoCMS to manage you
+        audio files and access them via API.
+      </p>
+      <p>
+        Other alternatives include Google Drive and Dropbox or store you audio
+        files directly in the project.
+      </p>
       <Footer />
     </Wrapper>
   )
