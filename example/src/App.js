@@ -11,7 +11,7 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const tracks = [
   {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+    url: 'https://www.mediafire.com/file/zspbp6f0hjid25y',
     title: 'Madza - Departures',
     tags: ['edm']
   },
@@ -33,6 +33,9 @@ const App = () => {
   // !mobile view drag button worker
   // !mobile view title, volume and time positioning
   // !upper header, contribute to github, author
+  // !change music included in examples
+  // !first search result not playlist
+  // !click tag do not play, if not play
 
   const colors = `html{
   --playerBackground: #18191f;
