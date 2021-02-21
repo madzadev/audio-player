@@ -2,7 +2,7 @@
 
 GIF image goes here
 
-## Live DEMO: <span style="color:#2ECC71 ">[https://audioplayer.madza.dev](https://audioplayer.madza.dev)</span>
+### Live DEMO: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
 ## Features
 
