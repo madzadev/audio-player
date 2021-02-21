@@ -17,23 +17,25 @@ import Player from 'audio-player'
 ```javascript
 const tracks = [
   {
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-    title: "Madza - AAAAAAA",
-    tags: ["edm"],
+    url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
+    title: 'Madza - Chords of Life',
+    tags: ['house']
   },
   {
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-    title: "Madza - BBBBBB",
-    tags: ["chill"],
+    url: 'https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3',
+    title: 'Madza - Late Night Drive',
+    tags: ['dnb']
   },
   {
-    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3mp3",
-    title: "Madza - CCCC",
-    tags: ["bass"],
-  },
-];
+    url: 'https://audioplayer.madza.dev/Madza-Persistence.mp3',
+    title: 'Madza - Persistence',
+    tags: ['dubstep']
+  }
+]
+```
 
-<Player source={tracks}>
+```javascript
+<Player trackList={tracks}>
 ```
 
 ## Features
@@ -51,10 +53,44 @@ Responsive design
 
 ## Options
 
+```javascript
+<Player
+  trackList={tracks}
+  includeTags={true}
+  includeSearch={true}
+  showPlaylist={true}
+  autoPlayNextTrack={true}
+/>
+```
+
 ## Color Schemes
 
-Images goes here.
+```javascript
+const colors = `html {
+          --tagsBackground: #9440f3;
+          --tagsText: #ffffff;
+          --tagsBackgroundHoverActive: #2cc0a0;
+          --tagsTextHoverActive: #ffffff;
+          --searchBackground: #18191f;
+          --searchText: #ffffff;
+          --playerBackground: #18191f;
+          --titleColor: #ffffff; 
+          --timeColor: #ffffff;
+          --progressSlider: #9440f3;
+          --progressUsed: #ffffff;
+          --progressLeft: #151616;
+          --volumeSlider: #9440f3;
+          --volumeUsed: #ffffff;
+          --volumeLeft:  #151616;
+          --playlistBackground: #18191f;
+          --playlistText: #575a77;
+          --playlistBackgroundHoverActive:  #18191f;
+          --playlistTextHoverActive: #ffffff;
+      }`
+```
 
-## Support
+## Final notes
 
-The player is hooks-based, and will work with React 16.8.0 ('the one with hooks') or higher.
+It's recommended to use CMS like Contentful or DatoCMS to manage you audio files and access them via API.
+
+Other alternatives include Google Drive and Dropbox or store you audio files directly in the project.
