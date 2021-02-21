@@ -2,20 +2,7 @@
 
 ![Player Preview](https://i.imgur.com/qVX68ve.gif)
 
-### Live DEMO: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
-
-## Features
-
-- Play/Pause
-- Next/Previous tracks
-- Loop audio
-- Shuffle play
-- Drag progress bar
-- Volume control
-- Clickable playlist
-- Filter audio files based on genre
-- Search audio files by title
-- Responsive design
+### Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
 ## Installation
 
