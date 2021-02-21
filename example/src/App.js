@@ -22,7 +22,7 @@ const tracks = [
     tags: ['chill']
   },
   {
-    url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+    url: 'https://www.audioplayer.madza.dev/Madza-Persistence.mp3',
     title: 'Madza - Persistence',
     tags: ['bass']
   }
