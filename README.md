@@ -2,6 +2,8 @@
 
 GIF image goes here
 
+## Live DEMO: <span style="color:#2ECC71 ">[https://audioplayer.madza.dev](https://audioplayer.madza.dev)</span>
+
 ## Features
 
 Play/Pause
@@ -51,7 +53,7 @@ const tracks = [
 <Player trackList={tracks}>
 ```
 
-'trackList' is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
+`trackList` is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
 
 ## Options
 
