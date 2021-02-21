@@ -11,7 +11,7 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const tracks = [
   {
-    url: 'https://www.mediafire.com/file/zspbp6f0hjid25y',
+    url: 'https://www.audioplayer.madza.dev/samples/Madza-Faded.mp3',
     title: 'Madza - Departures',
     tags: ['edm']
   },
