@@ -11,7 +11,8 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const tracks = [
   {
-    url: 'https://www.audioplayer.madza.dev/samples/Madza-Faded.mp3',
+    url:
+      'https://assets.ctfassets.net/zlsyc9paq6sa/71vPzAEAd6TejG1d3BXvBP/3f81f5c1d9e781f5c10f8711e7569e76/Caspa___Rusko_-_Rock_Bottom__Madza_Remake_.mp3',
     title: 'Madza - Departures',
     tags: ['edm']
   },
@@ -61,7 +62,7 @@ const App = () => {
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`const tracks = [
           {
-            url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+            url: 'https://www.audioplayer.madza.dev/Madza-Departures.mp3',
             title: 'Madza - Departures',
             tags: ['edm']
           },
