@@ -1,21 +1,21 @@
 # React audio player
 
-GIF image goes here
+![Player Preview](https://i.imgur.com/qVX68ve.gif)
 
 ### Live DEMO: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
 ## Features
 
-Play/Pause
-Next/Previous tracks
-Loop audio
-Shuffle play
-Drag progress bar
-Volume control
-Clickable playlist
-Filter audio files based on genre
-Search audio files by title
-Responsive design
+- Play/Pause
+- Next/Previous tracks
+- Loop audio
+- Shuffle play
+- Drag progress bar
+- Volume control
+- Clickable playlist
+- Filter audio files based on genre
+- Search audio files by title
+- Responsive design
 
 ## Installation
 
@@ -26,7 +26,7 @@ Responsive design
 ## Usage
 
 ```javascript
-import Player from 'audio-player'
+import Player from '@madzadev/audio-player'
 ```
 
 ```javascript
