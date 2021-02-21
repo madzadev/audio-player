@@ -2,6 +2,19 @@
 
 GIF image goes here
 
+## Features
+
+Play/Pause
+Next/Previous tracks
+Loop audio
+Shuffle play
+Drag progress bar
+Volume control
+Clickable playlist
+Filter audio files based on genre
+Search audio files by title
+Responsive design
+
 ## Installation
 
 ```javascript
@@ -38,20 +51,11 @@ const tracks = [
 <Player trackList={tracks}>
 ```
 
-## Features
-
-Play/Pause
-Next/Previous tracks
-Loop audio
-Shuffle play
-Drag progress bar
-Volume control
-Clickable playlist
-Filter audio files based on genre
-Search audio files by title
-Responsive design
+'trackList' is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
 
 ## Options
+
+The default values of available options props are displayed.
 
 ```javascript
 <Player
@@ -63,7 +67,11 @@ Responsive design
 />
 ```
 
-## Color Schemes
+## Color schemes
+
+The player uses 5 color palette by default.
+
+You can further customize the player by editing the colors variable below.
 
 ```javascript
 const colors = `html {
