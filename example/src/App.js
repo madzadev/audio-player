@@ -84,13 +84,13 @@ const App = () => {
         <code>'trackList'</code> is the mandatory prop and requires to pass in
         an array consisting of objects with `url`, `title` and `tags` keys.
       </p>
-      <p className='note'>
+      {/* <p className='note'>
         Each object in the array represents single track. Multiple tags are
         possible per track.
-      </p>
+      </p> */}
       <h1>Options</h1>
       <p className='note'>
-        The default values of available options props are displayed below.
+        The default values of available options props are displayed.
       </p>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Player
@@ -107,13 +107,10 @@ const App = () => {
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design */}
       <h1>Color schemas</h1>
-      <p className='note'>
-        The player uses 5 color palette by default. Custom color schemas are
-        currently being designed.
-      </p>
+      <p className='note'>The player uses 5 color palette by default.</p>
       <p className='warning'>
-        For now, you can further customize the player by editing the colors
-        variable below.
+        You can further customize the player by editing the colors variable
+        below.
       </p>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
         {`const colors = \`html {
@@ -144,7 +141,7 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
-      <h1>Sizing</h1>
+      {/* <h1>Sizing</h1>
       <p className='warning'>
         The player is set to span 100% of the width of the container you include
         it in.
@@ -152,7 +149,7 @@ const App = () => {
       <p className='note'>
         Tags, loop and shuffle functionality is currently disabled in mobile
         views.
-      </p>
+      </p> */}
       <h1>Final notes</h1>
       <p className='warning'>
         It's recommended to use CMS like Contentful or DatoCMS to manage you
