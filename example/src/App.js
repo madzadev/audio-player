@@ -28,6 +28,12 @@ const tracks = [
 ]
 
 const App = () => {
+  // !multiple tags render
+  // !search empty return message
+  // !mobile view drag button worker
+  // !mobile view title, volume and time positioning
+  // !upper header, contribute to github, author
+
   const colors = `html{
   --playerBackground: #18191f;
   --progressBar: #151616;
@@ -99,7 +105,7 @@ const App = () => {
       audio files by title Responsive design */}
       <h1>Color schemas</h1>
       <p className='note'>
-        The player uses 5 color palette by default. Custom color schemes are
+        The player uses 5 color palette by default. Custom color schemas are
         currently being designed.
       </p>
       <p className='warning'>
@@ -135,7 +141,7 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
-      <h1>Sizing and Responsiveness</h1>
+      <h1>Sizing</h1>
       <p className='warning'>
         The player is set to span 100% of the width of the container you include
         it in.
