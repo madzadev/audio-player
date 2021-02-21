@@ -97,6 +97,10 @@ const colors = `html {
       }`
 ```
 
+```javascript
+<Player trackList={tracks} customColorScheme={colors} />
+```
+
 ## Final notes
 
 It's recommended to use CMS like Contentful or DatoCMS to manage you audio files and access them via API.
