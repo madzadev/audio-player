@@ -4,8 +4,11 @@
   "description": "React audio player by Madza",
   "keywords": [
     "react",
-    "audio-player",
-    "mp3-player"
+    "audio",
+    "player",
+    "mp3",
+    "playlist",
+    "media"
   ],
   "author": "Madza <hi@madza.dev> (http://madza.dev)",
   "license": "MIT",
