@@ -42,6 +42,6 @@ code {
 hr {
   border: none;
   border-bottom: 2px solid rgb(44, 44, 44);
-  width: 70%;
+  max-width: 300px;
   margin: 40px auto;
 }

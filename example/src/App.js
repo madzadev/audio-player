@@ -143,12 +143,8 @@ const App = () => {
       </p> */}
       <h1>Final notes</h1>
       <p className='warning'>
-        It's recommended to use CMS like Contentful or DatoCMS to manage you
+        It's recommended to use CMS like a Contentful or DatoCMS to manage your
         audio files and access them via API.
-      </p>
-      <p className='note'>
-        Other alternatives include Google Drive and Dropbox or store you audio
-        files directly in the project.
       </p>
       <hr />
       <Footer />
