@@ -70,6 +70,7 @@ const colors = `html {
           --tagsTextHoverActive: #ffffff;
           --searchBackground: #18191f;
           --searchText: #ffffff;
+          --searchPlaceHolder: #575a77;
           --playerBackground: #18191f;
           --titleColor: #ffffff; 
           --timeColor: #ffffff;
