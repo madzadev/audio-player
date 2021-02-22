@@ -34,7 +34,6 @@ export const Player = ({
   includeTags = true,
   includeSearch = true,
   showPlaylist = true,
-  autoPlayOnLoad = false,
   autoPlayNextTrack = true,
   customColorScheme
 }) => {
@@ -91,12 +90,16 @@ ${customColorScheme}
 
     setAudio(audio)
     setTitle(trackList[curTrack].title)
-    // audio.muted = true
-    // audio.autoplay = true
-    // if (audio !== null) {
-    //   audio.play()
-    // }
   }, [])
+
+  const tags = [];
+  trackList.forEach(track=>{
+  track.tags.forEach(tag=>{
+    if(!tags.includes(tag)){
+      tags.push(tag)
+    }
+  })
+})
 
   const shufflePlaylist = (arr) => {
     if (arr.length === 1) return arr
@@ -176,10 +179,10 @@ ${customColorScheme}
     setCurTrack((curTrack = playlist[index]))
   }
 
-  const aaa = useRef(true)
+  const isInitialFilter = useRef(true)
   useEffect(() => {
-    if (aaa.current) {
-      aaa.current = false
+    if (isInitialFilter.current) {
+      isInitialFilter.current = false
     } else {
       if (!playlist.includes(curTrack)) {
         setCurTrack((curTrack = playlist[0]))
@@ -189,6 +192,7 @@ ${customColorScheme}
 
   const tagClickHandler = (e) => {
     const tag = e.currentTarget.innerHTML
+    console.log(tag)
     if (!filter.includes(tag)) {
       setFilter([...filter, tag])
     } else {
@@ -202,24 +206,26 @@ ${customColorScheme}
       <GlobalStyles />
       {includeTags && (
         <TagsTemplate>
-          {trackList
+          {/* Single tag filter */}
+          {/* {trackList
             .filter(
               (track, index, array) =>
                 array.findIndex(
                   (el) => el.tags.toString() === track.tags.toString()
                 ) === index
             )
-            .map((track, index) => {
+            .map((track, index) => {})} */}
+          {tags.map((tag, index) => {
               return (
                 <TagItem
                   key={index}
                   className={
                     filter.length !== 0 &&
-                    filter.includes(track.tags.toString())
+                    filter.includes(tag)
                       ? 'active'
                       : ''
                   }
-                  tag={track.tags.toString()}
+                  tag={tag}
                   onClick={tagClickHandler}
                 />
               )
@@ -290,7 +296,7 @@ ${customColorScheme}
               (a, b) => a.title.includes('Remix') - b.title.includes('Remix')
             )
             .map((el, index) => {
-              if (filter.length === 0 || filter.includes(el.tags[0])) {
+              if (filter.length === 0 || filter.some(filter=>el.tags.includes(filter))) {
                 playlist.push(index)
 
                 return (

@@ -28,15 +28,6 @@ const tracks = [
 ]
 
 const App = () => {
-  // !multiple tags render
-  // !search empty return message
-  // !mobile view drag button worker
-  // !mobile view title, volume and time positioning
-  // !upper header, contribute to github, author
-  // !change music included in examples
-  // !first search result not playlist
-  // !click tag do not play, if not play
-
   const colors = `html{
   --playerBackground: #18191f;
   --progressBar: #151616;
