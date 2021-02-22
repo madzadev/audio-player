@@ -1,10 +1,10 @@
 
 Todo:
-  ☐ multiple tags render
-  ☐ search empty return message
+  ✔ multiple tags render @done(21-02-22 15:37)
+  ✘ search empty return message @cancelled(21-02-22 15:38)
   ☐ mobile view drag button worker
   ☐ mobile view title, volume and time positioning
   ☐ upper header, contribute to github, author
-  ☐ change music included in examples
+  ✔ change music included in examples @done(21-02-22 15:38)
   ☐ first search result not playlist
   ☐ click tag do not play, if not play

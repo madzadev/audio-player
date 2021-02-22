@@ -92,14 +92,14 @@ ${customColorScheme}
     setTitle(trackList[curTrack].title)
   }, [])
 
-  const tags = [];
-  trackList.forEach(track=>{
-  track.tags.forEach(tag=>{
-    if(!tags.includes(tag)){
-      tags.push(tag)
-    }
+  const tags = []
+  trackList.forEach((track) => {
+    track.tags.forEach((tag) => {
+      if (!tags.includes(tag)) {
+        tags.push(tag)
+      }
+    })
   })
-})
 
   const shufflePlaylist = (arr) => {
     if (arr.length === 1) return arr
@@ -176,7 +176,9 @@ ${customColorScheme}
   const playlistItemClickHandler = (e) => {
     const num = Number(e.currentTarget.getAttribute('data-key'))
     const index = playlist.indexOf(num)
+    console.log(num, playlist, curTrack)
     setCurTrack((curTrack = playlist[index]))
+    play()
   }
 
   const isInitialFilter = useRef(true)
@@ -206,30 +208,18 @@ ${customColorScheme}
       <GlobalStyles />
       {includeTags && (
         <TagsTemplate>
-          {/* Single tag filter */}
-          {/* {trackList
-            .filter(
-              (track, index, array) =>
-                array.findIndex(
-                  (el) => el.tags.toString() === track.tags.toString()
-                ) === index
-            )
-            .map((track, index) => {})} */}
           {tags.map((tag, index) => {
-              return (
-                <TagItem
-                  key={index}
-                  className={
-                    filter.length !== 0 &&
-                    filter.includes(tag)
-                      ? 'active'
-                      : ''
-                  }
-                  tag={tag}
-                  onClick={tagClickHandler}
-                />
-              )
-            })}
+            return (
+              <TagItem
+                key={index}
+                className={
+                  filter.length !== 0 && filter.includes(tag) ? 'active' : ''
+                }
+                tag={tag}
+                onClick={tagClickHandler}
+              />
+            )
+          })}
         </TagsTemplate>
       )}
       {includeSearch && (
@@ -288,27 +278,25 @@ ${customColorScheme}
       {showPlaylist && (
         <PlaylistTemplate>
           {trackList
-            .filter((track) =>
-              track.title.toLowerCase().includes(query.toLowerCase())
-            )
             .sort((a, b) => (a.title > b.title ? 1 : -1))
-            .sort(
-              (a, b) => a.title.includes('Remix') - b.title.includes('Remix')
-            )
             .map((el, index) => {
-              if (filter.length === 0 || filter.some(filter=>el.tags.includes(filter))) {
-                playlist.push(index)
-
-                return (
-                  <PlaylistItem
-                    className={curTrack === index ? 'active' : ''}
-                    key={index}
-                    data_key={index}
-                    title={el.title}
-                    src={el.url}
-                    onClick={playlistItemClickHandler}
-                  />
-                )
+              if (
+                filter.length === 0 ||
+                filter.some((filter) => el.tags.includes(filter))
+              ) {
+                if (el.title.toLowerCase().includes(query.toLowerCase())) {
+                  playlist.push(index)
+                  return (
+                    <PlaylistItem
+                      className={curTrack === index ? 'active' : ''}
+                      key={index}
+                      data_key={index}
+                      title={el.title}
+                      src={el.url}
+                      onClick={playlistItemClickHandler}
+                    />
+                  )
+                }
               }
             })}
         </PlaylistTemplate>
