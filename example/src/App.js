@@ -58,6 +58,7 @@ const App = () => {
     --playlistBackgroundHoverActive:  #18191f;
     --playlistTextHoverActive: #ffffff;
   }`
+
   return (
     <Wrapper>
       <Header />
@@ -128,6 +129,7 @@ const App = () => {
           --tagsTextHoverActive: #ffffff;
           --searchBackground: #18191f;
           --searchText: #ffffff;
+          --searchPlaceHolder: #575a77;
           --playerBackground: #18191f;
           --titleColor: #ffffff; 
           --timeColor: #ffffff;
