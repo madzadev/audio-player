@@ -1,6 +1,6 @@
 {
-  "short_name": "audio-player-3",
-  "name": "audio-player-3",
+  "short_name": "audio-player",
+  "name": "@madzadev/audio-player-3",
   "icons": [
     {
       "src": "favicon.ico",
