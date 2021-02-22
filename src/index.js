@@ -176,8 +176,8 @@ ${customColorScheme}
   const playlistItemClickHandler = (e) => {
     const num = Number(e.currentTarget.getAttribute('data-key'))
     const index = playlist.indexOf(num)
-    console.log(num, playlist, curTrack)
     setCurTrack((curTrack = playlist[index]))
+    // !play only when player is paused
     play()
   }
 
@@ -194,7 +194,6 @@ ${customColorScheme}
 
   const tagClickHandler = (e) => {
     const tag = e.currentTarget.innerHTML
-    console.log(tag)
     if (!filter.includes(tag)) {
       setFilter([...filter, tag])
     } else {
