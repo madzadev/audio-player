@@ -22,12 +22,12 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: var(--dragsAndTags);
+  background: var(--progressSlider);
   cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb:hover {
-  background: var(--dragsAndTags);
+  background: var(--progressSlider);
 }
 
 .slider::-moz-range-thumb {

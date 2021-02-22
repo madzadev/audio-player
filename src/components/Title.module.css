@@ -1,5 +1,5 @@
 .title {
-  color: var(--primaryText);
+  color: var(--titleColor);
   font-size: 28px;
   margin: 0;
 }
