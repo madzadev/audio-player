@@ -1,3 +1,14 @@
 .wrapper {
+  margin-top: 30px;
   text-align: center;
+  color: #303030;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Nothing You Could Do', cursive;
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
+.wrapper p {
+  margin: 10px;
 }

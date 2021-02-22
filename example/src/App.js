@@ -39,7 +39,6 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      {/* includeTags, includeSearch, showPlaylist */}
       <Player trackList={tracks} customColorScheme={colors} />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
@@ -73,12 +72,9 @@ const App = () => {
       </SyntaxHighlighter>
       <p className='warning'>
         <code>'trackList'</code> is the mandatory prop and requires to pass in
-        an array consisting of objects with `url`, `title` and `tags` keys.
+        an array consisting of objects with <code>url</code>, <code>title</code>{' '}
+        and <code>tags</code> keys.
       </p>
-      {/* <p className='note'>
-        Each object in the array represents single track. Multiple tags are
-        possible per track.
-      </p> */}
       <h1>Options</h1>
       <p className='note'>
         The default values of available options props are displayed.
@@ -92,7 +88,6 @@ const App = () => {
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
-
       {/* <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
@@ -146,7 +141,12 @@ const App = () => {
         It's recommended to use CMS like a Contentful or DatoCMS to manage your
         audio files and access them via API.
       </p>
-      <hr />
+      <p className='note'>
+        Other alternatives include Google Drive and Dropbox or store you audio
+        files directly in the project.
+      </p>
+
+      {/* <hr /> */}
       <Footer />
     </Wrapper>
   )

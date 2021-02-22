@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
 body {
   margin: 0;
@@ -26,7 +27,7 @@ h4 {
 }
 
 .link {
-  color: rgb(27, 61, 255);
+  color: rgb(103, 92, 253);
 }
 
 pre {

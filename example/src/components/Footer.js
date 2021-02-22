@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      <h3>
+      <p>
         Component and audio created by{' '}
         <a
           className='link'
@@ -14,9 +14,8 @@ const Footer = () => {
         >
           Madza
         </a>
-        .
-      </h3>
-      <h4>
+      </p>
+      <p>
         Have a suggestion?{' '}
         <a
           className='link'
@@ -27,7 +26,7 @@ const Footer = () => {
           Contribute{' '}
         </a>
         to project!
-      </h4>
+      </p>
       {/* <p>
         More music on{' '}
         <a
