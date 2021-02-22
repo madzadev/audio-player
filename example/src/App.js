@@ -28,41 +28,10 @@ const tracks = [
 ]
 
 const App = () => {
-  // const colors = `html{
-  //   --playerBackground: #18191f;
-  //   --progressBar: #151616;
-  //   --dragsAndTags: #9440f3;
-  //   --tagsHover: #2cc0a0;
-  //   --primaryText: #ffffff;
-  //   --secondaryText: #575a77;
-  // }`
-  const colors = `html{
-    --tagsBackground: #9440f3;
-    --tagsText: #ffffff;
-    --tagsBackgroundHoverActive: #2cc0a0;
-    --tagsTextHoverActive: #ffffff;
-    --searchBackground: #18191f;
-    --searchText: #ffffff;
-    --searchPlaceHolder: #575a77;
-    --playerBackground: #18191f;
-    --titleColor: #ffffff;
-    --timeColor: #ffffff;
-    --progressSlider: #9440f3;
-    --progressUsed: #ffffff;
-    --progressLeft: #151616;
-    --volumeSlider: #9440f3;
-    --volumeUsed: #ffffff;
-    --volumeLeft:  #151616;
-    --playlistBackground: #18191f;
-    --playlistText: #575a77;
-    --playlistBackgroundHoverActive:  #18191f;
-    --playlistTextHoverActive: #ffffff;
-  }`
-
   return (
     <Wrapper>
       <Header />
-      <Player trackList={tracks} customColorScheme={colors} />
+      <Player trackList={tracks} />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
@@ -151,15 +120,6 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
-      {/* <h1>Sizing</h1>
-      <p className='warning'>
-        The player is set to span 100% of the width of the container you include
-        it in.
-      </p>
-      <p className='note'>
-        Tags, loop and shuffle functionality is currently disabled in mobile
-        views.
-      </p> */}
       <h1>Final notes</h1>
       <p className='warning'>
         It's recommended to use CMS like a Contentful or DatoCMS to manage your
@@ -169,8 +129,6 @@ const App = () => {
         Other alternatives include Google Drive and Dropbox or store you audio
         files directly in the project.
       </p>
-
-      {/* <hr /> */}
       <Footer />
     </Wrapper>
   )

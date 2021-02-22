@@ -39,10 +39,3 @@ code {
   background-color: rgb(212, 212, 212);
   padding: 5px;
 }
-
-hr {
-  border: none;
-  border-bottom: 2px solid rgb(44, 44, 44);
-  max-width: 300px;
-  margin: 40px auto;
-}
