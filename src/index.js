@@ -20,6 +20,7 @@ import PlaylistItem from './components/PlaylistItem'
 import TagsTemplate from './components/TagsTemplate'
 import TagItem from './components/TagItem'
 import Search from './components/Search'
+
 import loopCurrentBtn from 'icons/loop_current.png'
 import loopNoneBtn from 'icons/loop_none.png'
 import previousBtn from 'icons/previous.png'
@@ -324,23 +325,3 @@ ${customColorScheme}
     </PageTemplate>
   )
 }
-
-// const client = require("contentful").createClient({
-//   space: process.env.SPACE_ID,
-//   accessToken: process.env.ACCESS_TOKEN,
-// });
-
-// export async function getStaticProps(context) {
-//   const trackList = await client
-//     .getEntries({ content_type: "audio" })
-//     .then((response) => {
-//       return response.items;
-//     })
-//     .catch(console.error);
-
-//   return {
-//     props: { trackList },
-//   };
-// }
-
-// export default Player
