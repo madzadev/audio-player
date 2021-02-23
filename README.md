@@ -4,6 +4,8 @@
 
 ### Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
+---
+
 ## Installation
 
 ```javascript
@@ -13,27 +15,27 @@
 ## Usage
 
 ```javascript
-import Player from '@madzadev/audio-player'
+import Player from "@madzadev/audio-player";
 ```
 
 ```javascript
 const tracks = [
   {
-    url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
-    title: 'Madza - Chords of Life',
-    tags: ['house']
+    url: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
+    title: "Madza - Chords of Life",
+    tags: ["house"],
   },
   {
-    url: 'https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3',
-    title: 'Madza - Late Night Drive',
-    tags: ['dnb']
+    url: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
+    title: "Madza - Late Night Drive",
+    tags: ["dnb"],
   },
   {
-    url: 'https://audioplayer.madza.dev/Madza-Persistence.mp3',
-    title: 'Madza - Persistence',
-    tags: ['dubstep']
-  }
-]
+    url: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
+    title: "Madza - Persistence",
+    tags: ["dubstep"],
+  },
+];
 ```
 
 ```javascript
@@ -84,7 +86,7 @@ const colors = `html {
           --playlistText: #575a77;
           --playlistBackgroundHoverActive:  #18191f;
           --playlistTextHoverActive: #ffffff;
-      }`
+      }`;
 ```
 
 ```javascript
