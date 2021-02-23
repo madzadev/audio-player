@@ -1,7 +1,7 @@
 {
   "name": "@madzadev/audio-player",
   "version": "1.0.1",
-  "description": "React audio player by Madza",
+  "description": "React audio player for your music, with custom controls, playlist, filters, and search functionality.",
   "keywords": [
     "react",
     "audio",
