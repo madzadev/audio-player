@@ -1,34 +1,34 @@
-import styles from './styles/Player.module.css'
-import { createGlobalStyle } from 'styled-components'
-import React, { useState, useEffect, useRef } from 'react'
+import styles from "./styles/Player.module.css";
+import { createGlobalStyle } from "styled-components";
+import React, { useState, useEffect, useRef } from "react";
 
-import PageTemplate from './components/PageTemplate'
-import PlayerTemplate from './components/PlayerTemplate'
-import Title from './components/Title'
-import Time from './components/Time'
-import Progress from './components/Progress'
-import ButtonsBox from './components/ButtonsBox'
-import LoopCurrent from './components/LoopCurrent'
-import Previous from './components/Previous'
-import Play from './components/Play'
-import Pause from './components/Pause'
-import Next from './components/Next'
-import Shuffle from './components/Shuffle'
-import Volume from './components/Volume'
-import PlaylistTemplate from './components/PlaylistTemplate'
-import PlaylistItem from './components/PlaylistItem'
-import TagsTemplate from './components/TagsTemplate'
-import TagItem from './components/TagItem'
-import Search from './components/Search'
+import PageTemplate from "./components/PageTemplate";
+import PlayerTemplate from "./components/PlayerTemplate";
+import Title from "./components/Title";
+import Time from "./components/Time";
+import Progress from "./components/Progress";
+import ButtonsBox from "./components/ButtonsBox";
+import LoopCurrent from "./components/LoopCurrent";
+import Previous from "./components/Previous";
+import Play from "./components/Play";
+import Pause from "./components/Pause";
+import Next from "./components/Next";
+import Shuffle from "./components/Shuffle";
+import Volume from "./components/Volume";
+import PlaylistTemplate from "./components/PlaylistTemplate";
+import PlaylistItem from "./components/PlaylistItem";
+import TagsTemplate from "./components/TagsTemplate";
+import TagItem from "./components/TagItem";
+import Search from "./components/Search";
 
-import loopCurrentBtn from 'icons/loop_current.png'
-import loopNoneBtn from 'icons/loop_none.png'
-import previousBtn from 'icons/previous.png'
-import playBtn from 'icons/play.png'
-import pauseBtn from 'icons/pause.png'
-import nextBtn from 'icons/next.png'
-import shuffleAllBtn from 'icons/shuffle_all.png'
-import shuffleNoneBtn from 'icons/shuffle_none.png'
+import loopCurrentBtn from "icons/loop_current.png";
+import loopNoneBtn from "icons/loop_none.png";
+import previousBtn from "icons/previous.png";
+import playBtn from "icons/play.png";
+import pauseBtn from "icons/pause.png";
+import nextBtn from "icons/next.png";
+import shuffleAllBtn from "icons/shuffle_all.png";
+import shuffleNoneBtn from "icons/shuffle_none.png";
 
 const colors = `html{
     --tagsBackground: #9440f3;
@@ -51,7 +51,7 @@ const colors = `html{
     --playlistText: #575a77;
     --playlistBackgroundHoverActive:  #18191f;
     --playlistTextHoverActive: #ffffff;
-  }`
+  }`;
 
 export const Player = ({
   trackList,
@@ -59,170 +59,170 @@ export const Player = ({
   includeSearch = true,
   showPlaylist = true,
   autoPlayNextTrack = true,
-  customColorScheme = colors
+  customColorScheme = colors,
 }) => {
-  const [query, updateQuery] = useState('')
+  const [query, updateQuery] = useState("");
 
-  let playlist = []
+  let playlist = [];
 
-  const [audio, setAudio] = useState(null)
-  const [active, setActive] = useState(false)
-  const [title, setTitle] = useState('')
-  const [length, setLength] = useState(0)
-  const [time, setTime] = useState(0)
-  const [slider, setSlider] = useState(1)
-  const [drag, setDrag] = useState(0)
-  const [volume, setVolume] = useState(0.8)
-  let [end, setEnd] = useState(0)
-  const [shuffled, setShuffled] = useState(false)
-  const [looped, setLooped] = useState(false)
+  const [audio, setAudio] = useState(null);
+  const [active, setActive] = useState(false);
+  const [title, setTitle] = useState("");
+  const [length, setLength] = useState(0);
+  const [time, setTime] = useState(0);
+  const [slider, setSlider] = useState(1);
+  const [drag, setDrag] = useState(0);
+  const [volume, setVolume] = useState(0.8);
+  let [end, setEnd] = useState(0);
+  const [shuffled, setShuffled] = useState(false);
+  const [looped, setLooped] = useState(false);
 
-  const [filter, setFilter] = useState([])
-  let [curTrack, setCurTrack] = useState(0)
+  const [filter, setFilter] = useState([]);
+  let [curTrack, setCurTrack] = useState(0);
 
   const GlobalStyles = createGlobalStyle`
 ${customColorScheme}
-`
+`;
 
-  const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4)
+  const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
   useEffect(() => {
-    const audio = new Audio(trackList[curTrack].url)
+    const audio = new Audio(trackList[curTrack].url);
 
     const setAudioData = () => {
-      setLength(audio.duration)
-      setTime(audio.currentTime)
-    }
+      setLength(audio.duration);
+      setTime(audio.currentTime);
+    };
 
     const setAudioTime = () => {
-      const curTime = audio.currentTime
-      setTime(curTime)
-      setSlider(curTime ? ((curTime * 100) / audio.duration).toFixed(1) : 0)
-    }
+      const curTime = audio.currentTime;
+      setTime(curTime);
+      setSlider(curTime ? ((curTime * 100) / audio.duration).toFixed(1) : 0);
+    };
 
-    const setAudioVolume = () => setVolume(audio.volume)
+    const setAudioVolume = () => setVolume(audio.volume);
 
-    const setAudioEnd = () => setEnd((end += 1))
+    const setAudioEnd = () => setEnd((end += 1));
 
     // events on audio object
-    audio.addEventListener('loadeddata', setAudioData)
-    audio.addEventListener('timeupdate', setAudioTime)
-    audio.addEventListener('volumechange', setAudioVolume)
-    audio.addEventListener('ended', setAudioEnd)
+    audio.addEventListener("loadeddata", setAudioData);
+    audio.addEventListener("timeupdate", setAudioTime);
+    audio.addEventListener("volumechange", setAudioVolume);
+    audio.addEventListener("ended", setAudioEnd);
 
-    setAudio(audio)
-    setTitle(trackList[curTrack].title)
-  }, [])
+    setAudio(audio);
+    setTitle(trackList[curTrack].title);
+  }, []);
 
-  const tags = []
+  const tags = [];
   trackList.forEach((track) => {
     track.tags.forEach((tag) => {
       if (!tags.includes(tag)) {
-        tags.push(tag)
+        tags.push(tag);
       }
-    })
-  })
+    });
+  });
 
   const shufflePlaylist = (arr) => {
-    if (arr.length === 1) return arr
-    const rand = Math.floor(Math.random() * arr.length)
-    return [arr[rand], ...shufflePlaylist(arr.filter((_, i) => i != rand))]
-  }
+    if (arr.length === 1) return arr;
+    const rand = Math.floor(Math.random() * arr.length);
+    return [arr[rand], ...shufflePlaylist(arr.filter((_, i) => i != rand))];
+  };
 
-  const isInitialMount = useRef(true)
+  const isInitialMount = useRef(true);
   useEffect(() => {
     if (isInitialMount.current) {
-      isInitialMount.current = false
+      isInitialMount.current = false;
     } else {
       if (shuffled) {
-        playlist = shufflePlaylist(playlist)
+        playlist = shufflePlaylist(playlist);
       }
-      !looped && autoPlayNextTrack ? next() : play()
+      !looped && autoPlayNextTrack ? next() : play();
     }
-  }, [end])
+  }, [end]);
 
   useEffect(() => {
     if (audio != null) {
-      audio.volume = volume
+      audio.volume = volume;
     }
-  }, [volume])
+  }, [volume]);
 
   useEffect(() => {
     if (audio != null) {
-      pause()
-      const val = Math.round((drag * audio.duration) / 100)
-      audio.currentTime = val
+      pause();
+      const val = Math.round((drag * audio.duration) / 100);
+      audio.currentTime = val;
     }
-  }, [drag])
+  }, [drag]);
 
   const play = () => {
-    setActive(true)
-    audio.play()
-  }
+    setActive(true);
+    audio.play();
+  };
 
   const pause = () => {
-    setActive(false)
-    audio.pause()
-  }
+    setActive(false);
+    audio.pause();
+  };
 
   const loop = () => {
-    setLooped(!looped)
-  }
+    setLooped(!looped);
+  };
 
   useEffect(() => {
     if (audio != null) {
-      audio.src = trackList[curTrack].url
-      setTitle(trackList[curTrack].title)
-      play()
+      audio.src = trackList[curTrack].url;
+      setTitle(trackList[curTrack].title);
+      play();
     }
-  }, [curTrack])
+  }, [curTrack]);
 
   const previous = () => {
-    const index = playlist.indexOf(curTrack)
+    const index = playlist.indexOf(curTrack);
     index !== 0
       ? setCurTrack((curTrack = playlist[index - 1]))
-      : setCurTrack((curTrack = playlist[playlist.length - 1]))
-  }
+      : setCurTrack((curTrack = playlist[playlist.length - 1]));
+  };
 
   const next = () => {
-    const index = playlist.indexOf(curTrack)
+    const index = playlist.indexOf(curTrack);
     index !== playlist.length - 1
       ? setCurTrack((curTrack = playlist[index + 1]))
-      : setCurTrack((curTrack = playlist[0]))
-  }
+      : setCurTrack((curTrack = playlist[0]));
+  };
 
   const shuffle = () => {
-    setShuffled(!shuffled)
-  }
+    setShuffled(!shuffled);
+  };
 
   const playlistItemClickHandler = (e) => {
-    const num = Number(e.currentTarget.getAttribute('data-key'))
-    const index = playlist.indexOf(num)
-    setCurTrack((curTrack = playlist[index]))
+    const num = Number(e.currentTarget.getAttribute("data-key"));
+    const index = playlist.indexOf(num);
+    setCurTrack((curTrack = playlist[index]));
     // !play only when player is paused
-    play()
-  }
+    play();
+  };
 
-  const isInitialFilter = useRef(true)
+  const isInitialFilter = useRef(true);
   useEffect(() => {
     if (isInitialFilter.current) {
-      isInitialFilter.current = false
+      isInitialFilter.current = false;
     } else {
       if (!playlist.includes(curTrack)) {
-        setCurTrack((curTrack = playlist[0]))
+        setCurTrack((curTrack = playlist[0]));
       }
     }
-  }, [filter])
+  }, [filter]);
 
   const tagClickHandler = (e) => {
-    const tag = e.currentTarget.innerHTML
+    const tag = e.currentTarget.innerHTML;
     if (!filter.includes(tag)) {
-      setFilter([...filter, tag])
+      setFilter([...filter, tag]);
     } else {
-      const filteredArray = filter.filter((item) => item !== tag)
-      setFilter([...filteredArray])
+      const filteredArray = filter.filter((item) => item !== tag);
+      setFilter([...filteredArray]);
     }
-  }
+  };
 
   return (
     <PageTemplate>
@@ -234,12 +234,12 @@ ${customColorScheme}
               <TagItem
                 key={index}
                 className={
-                  filter.length !== 0 && filter.includes(tag) ? 'active' : ''
+                  filter.length !== 0 && filter.includes(tag) ? "active" : ""
                 }
                 tag={tag}
                 onClick={tagClickHandler}
               />
-            )
+            );
           })}
         </TagsTemplate>
       )}
@@ -254,8 +254,8 @@ ${customColorScheme}
         <div className={styles.title_time_wrapper}>
           <Title title={title} />
           <Time
-            time={`${!time ? '0:00' : fmtMSS(time)}/${
-              !length ? '0:00' : fmtMSS(length)
+            time={`${!time ? "0:00" : fmtMSS(time)}/${
+              !length ? "0:00" : fmtMSS(length)
             }`}
           />
         </div>
@@ -263,11 +263,12 @@ ${customColorScheme}
         <Progress
           value={slider}
           onChange={(e) => {
-            setSlider(e.target.value)
-            setDrag(e.target.value)
+            setSlider(e.target.value);
+            setDrag(e.target.value);
           }}
           // !Fix onMouseUp on mobile (equal to ontouchend)
           onMouseUp={play}
+          onTouchEnd={play}
         />
         <div className={styles.buttons_volume_wrapper}>
           <ButtonsBox>
@@ -290,7 +291,7 @@ ${customColorScheme}
           <Volume
             value={volume}
             onChange={(e) => {
-              setVolume(e.target.value / 100)
+              setVolume(e.target.value / 100);
             }}
           />
         </div>
@@ -306,22 +307,22 @@ ${customColorScheme}
                 filter.some((filter) => el.tags.includes(filter))
               ) {
                 if (el.title.toLowerCase().includes(query.toLowerCase())) {
-                  playlist.push(index)
+                  playlist.push(index);
                   return (
                     <PlaylistItem
-                      className={curTrack === index ? 'active' : ''}
+                      className={curTrack === index ? "active" : ""}
                       key={index}
                       data_key={index}
                       title={el.title}
                       src={el.url}
                       onClick={playlistItemClickHandler}
                     />
-                  )
+                  );
                 }
               }
             })}
         </PlaylistTemplate>
       )}
     </PageTemplate>
-  )
-}
+  );
+};
