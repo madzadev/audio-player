@@ -112,6 +112,10 @@ ${customColorScheme}
 
     setAudio(audio);
     setTitle(trackList[curTrack].title);
+
+    return () => {
+      audio.pause();
+    };
   }, []);
 
   const tags = [];
@@ -199,7 +203,6 @@ ${customColorScheme}
     const num = Number(e.currentTarget.getAttribute("data-key"));
     const index = playlist.indexOf(num);
     setCurTrack((curTrack = playlist[index]));
-    // !play only when player is paused
     play();
   };
 
