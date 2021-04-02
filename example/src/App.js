@@ -80,10 +80,6 @@ const App = () => {
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
-      {/* <h1>Features</h1>
-      Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
-      Volume control Clickable playlist Filter audio files based on genre Search
-      audio files by title Responsive design */}
       <h1>Color schemas</h1>
       <p className="note">The player uses 5 color palette by default.</p>
       <p className="warning">
