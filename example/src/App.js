@@ -1,31 +1,31 @@
-import React from 'react'
-import Wrapper from './components/Wrapper'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import React from "react";
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import { Player } from '@madzadev/audio-player'
-import '@madzadev/audio-player/dist/index.css'
+import { Player } from "@madzadev/audio-player";
+import "@madzadev/audio-player/dist/index.css";
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const tracks = [
   {
-    url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
-    title: 'Madza - Chords of Life',
-    tags: ['house']
+    url: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
+    title: "Madza - Chords of Life",
+    tags: ["house"],
   },
   {
-    url: 'https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3',
-    title: 'Madza - Late Night Drive',
-    tags: ['dnb']
+    url: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
+    title: "Madza - Late Night Drive",
+    tags: ["dnb"],
   },
   {
-    url: 'https://audioplayer.madza.dev/Madza-Persistence.mp3',
-    title: 'Madza - Persistence',
-    tags: ['dubstep']
-  }
-]
+    url: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
+    title: "Madza - Persistence",
+    tags: ["dubstep"],
+  },
+];
 
 const App = () => {
   return (
@@ -33,14 +33,14 @@ const App = () => {
       <Header />
       <Player trackList={tracks} />
       <h1>Installation</h1>
-      <SyntaxHighlighter language='bash' style={coldarkDark}>
+      <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
       <h1>Usage</h1>
-      <SyntaxHighlighter language='javascript' style={coldarkDark}>
+      <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`import Player from '@madzadev/audio-player'`}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='javascript' style={coldarkDark}>
+      <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const tracks = [
           {
             url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
@@ -59,19 +59,19 @@ const App = () => {
           }
         ]`}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='jsx' style={coldarkDark}>
+      <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Player trackList={tracks} />`}
       </SyntaxHighlighter>
-      <p className='warning'>
+      <p className="warning">
         <code>'trackList'</code> is the mandatory prop and requires to pass in
-        an array consisting of objects with <code>url</code>, <code>title</code>{' '}
+        an array consisting of objects with <code>url</code>, <code>title</code>{" "}
         and <code>tags</code> keys.
       </p>
       <h1>Options</h1>
-      <p className='note'>
+      <p className="note">
         The default values of available options props are displayed.
       </p>
-      <SyntaxHighlighter language='jsx' style={coldarkDark}>
+      <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Player
         trackList={tracks}
         includeTags={true}
@@ -85,12 +85,12 @@ const App = () => {
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design */}
       <h1>Color schemas</h1>
-      <p className='note'>The player uses 5 color palette by default.</p>
-      <p className='warning'>
+      <p className="note">The player uses 5 color palette by default.</p>
+      <p className="warning">
         You can further customize the player by editing the colors variable
         below.
       </p>
-      <SyntaxHighlighter language='javascript' style={coldarkDark}>
+      <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const colors = \`html {
           --tagsBackground: #9440f3;
           --tagsText: #ffffff;
@@ -114,24 +114,20 @@ const App = () => {
           --playlistTextHoverActive: #ffffff;
       }\``}
       </SyntaxHighlighter>
-      <SyntaxHighlighter language='jsx' style={coldarkDark}>
+      <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Player
         trackList={tracks}
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
       <h1>Final notes</h1>
-      <p className='warning'>
+      <p className="warning">
         It's recommended to use CMS like a Contentful or DatoCMS to manage your
         audio files and access them via API.
       </p>
-      <p className='note'>
-        Other alternatives include Google Drive and Dropbox or store you audio
-        files directly in the project.
-      </p>
       <Footer />
     </Wrapper>
-  )
-}
+  );
+};
 
-export default App
+export default App;
