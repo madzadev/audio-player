@@ -53,7 +53,7 @@ const colors = `html{
     --playlistTextHoverActive: #ffffff;
   }`;
 
-export const Player = ({
+const Player = ({
   trackList,
   includeTags = true,
   includeSearch = true,
@@ -329,3 +329,5 @@ ${customColorScheme}
     </PageTemplate>
   );
 };
+
+export default Player;
