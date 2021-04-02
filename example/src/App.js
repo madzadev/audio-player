@@ -3,7 +3,7 @@ import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import { Player } from "@madzadev/audio-player";
+import Player from "@madzadev/audio-player";
 import "@madzadev/audio-player/dist/index.css";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -38,7 +38,8 @@ const App = () => {
       </SyntaxHighlighter>
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
-        {`import Player from '@madzadev/audio-player'`}
+        {`import Player from '@madzadev/audio-player'
+        import '@madzadev/audio-player/dist/index.css'`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const tracks = [

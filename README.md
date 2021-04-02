@@ -16,6 +16,7 @@
 
 ```javascript
 import Player from "@madzadev/audio-player";
+import "@madzadev/audio-player/dist/index.css";
 ```
 
 ```javascript
@@ -96,5 +97,3 @@ const colors = `html {
 ## Final notes
 
 It's recommended to use CMS like Contentful or DatoCMS to manage your audio files and access them via API.
-
-Other alternatives include Google Drive and Dropbox or store you audio files directly in the project.
