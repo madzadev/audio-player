@@ -66,8 +66,7 @@ const App = () => {
       <p className="warning">
         <code>'trackList'</code> is the mandatory prop and requires to pass in
         an array consisting of objects with <code>url</code>, <code>title</code>{" "}
-        and <code>tags</code> keys. Multiple <code>tags</code> are possible per
-        track.
+        and <code>tags</code> keys.
       </p>
       <h1>Options</h1>
       <p className="note">
