@@ -96,4 +96,4 @@ const colors = `html {
 
 ## Final notes
 
-It's recommended to use CMS like Contentful or DatoCMS to manage your audio files and access them via API.
+It's recommended to use CMS like [Contentful](https://www.contentful.com) or [DatoCMS](https://www.datocms.com/) to manage your audio files and access them via API.

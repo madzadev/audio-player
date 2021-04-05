@@ -269,7 +269,6 @@ ${customColorScheme}
             setSlider(e.target.value);
             setDrag(e.target.value);
           }}
-          // !Fix onMouseUp on mobile (equal to ontouchend)
           onMouseUp={play}
           onTouchEnd={play}
         />

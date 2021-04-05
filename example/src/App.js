@@ -119,8 +119,10 @@ const App = () => {
       </SyntaxHighlighter>
       <h1>Final notes</h1>
       <p className="warning">
-        It's recommended to use CMS like a Contentful or DatoCMS to manage your
-        audio files and access them via API.
+        It's recommended to use CMS like a{" "}
+        <a href="https://www.contentful.com">Contentful</a> or{" "}
+        <a href="https://www.datocms.com">DatoCMS</a> to manage your audio files
+        and access them via API.
       </p>
       <Footer />
     </Wrapper>

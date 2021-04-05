@@ -1,5 +1,4 @@
 .wrapper {
-  /* border: 1px solid white; */
   width: 100%;
   display: inline-grid;
   grid-template-columns: repeat(5, auto);
