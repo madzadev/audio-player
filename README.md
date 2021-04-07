@@ -61,9 +61,7 @@ The default values of available options props are displayed.
 
 ## Color schemes
 
-The player uses 5 color palette by default.
-
-You can further customize the player by editing the colors variable below.
+You can further customize the player UI by editing the colors variable below. Pre-defined color schemes are planned in the future.
 
 ```javascript
 const colors = `html {
@@ -97,3 +95,5 @@ const colors = `html {
 ## Final notes
 
 It's recommended to use CMS like [Contentful](https://www.contentful.com) or [DatoCMS](https://www.datocms.com/) to manage your audio files and access them via API.
+
+The project is open source and any feature requests or issues are welcomed in the [Github repo](https;//github.com/madzadev/audio-player). Take a look and give it a ⭐ if you liked it.
