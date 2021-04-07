@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className={styles.wrapper}>
       <p>
-        Player and music created by{" "}
+        Player component and music created by{" "}
         <a
           className="link"
           target="_blank"
