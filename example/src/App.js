@@ -82,9 +82,12 @@ const App = () => {
       />`}
       </SyntaxHighlighter>
       <h1>Color schemas</h1>
-      <p className="note">
+      <p className="warning">
         You can further customize the player UI by editing the colors variable
-        below. Pre-defined color schemes are planned in the future.
+        below.
+      </p>
+      <p className="note">
+        Pre-defined color schemes are planned in the future.
       </p>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const colors = \`html {
@@ -123,12 +126,7 @@ const App = () => {
         <a href="https://www.datocms.com">DatoCMS</a> to manage your audio files
         and access them via API.
       </p>
-      <p className="note">
-        The project is open source and any feature requests or issues are
-        welcomed in the{" "}
-        <a href="https://github.com/madzadev/audio-player">Github repo</a>. Take
-        a look and give it a ⭐ if you liked it.
-      </p>
+
       <Footer />
     </Wrapper>
   );
