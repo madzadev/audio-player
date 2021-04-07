@@ -96,4 +96,4 @@ const colors = `html {
 
 It's recommended to use CMS like [Contentful](https://www.contentful.com) or [DatoCMS](https://www.datocms.com/) to manage your audio files and access them via API.
 
-The project is open source and any feature requests or issues are welcomed in the [Github repo](https;//github.com/madzadev/audio-player). Take a look and give it a ⭐ if you liked it.
+The project is open source and any feature requests or issues are welcomed in the [Github repo](https://github.com/madzadev/audio-player). Take a look and give it a ⭐ if you liked it.
