@@ -5,7 +5,7 @@
   min-height: 120px;
   overflow-x: hidden;
   padding-right: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 /* width */
@@ -26,6 +26,6 @@
 
 @media only screen and (min-width: 768px) {
   .wrapper {
-    width: 90%;
+    width: 100%;
   }
 }
