@@ -32,7 +32,7 @@
     "predeploy": "cd example && npm install && npm run build"
   },
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=16"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
