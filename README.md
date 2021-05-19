@@ -40,7 +40,7 @@ const tracks = [
 ```
 
 ```javascript
-<Player trackList={tracks}>
+<Player trackList={tracks} />
 ```
 
 `trackList` is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
