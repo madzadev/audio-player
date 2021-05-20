@@ -1,6 +1,4 @@
-<h1 text-align="center">
-React/NextJS Audio Player
-</h1>
+# React/NextJS Audio Player
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/madzadev/audio-player/graphs/commit-activity)
 [![GitHub issues](https://img.shields.io/github/issues/madzadev/audio-player)](https://github.com/madzadev/audio-player/issues/)
