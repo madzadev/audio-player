@@ -1,12 +1,12 @@
-# React audio player
+# React/NextJS Audio Player
 
 ![Player Preview](https://i.imgur.com/qVX68ve.gif)
 
-### Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
+## Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
 ---
 
-## Installation
+## Installationz
 
 ```javascript
  npm install @madzadev/audio-player

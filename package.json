@@ -1,9 +1,10 @@
 {
   "name": "@madzadev/audio-player",
   "version": "1.1.6",
-  "description": "React audio player for your music, with custom controls, playlist, filters, and search functionality.",
+  "description": "React/NextJS audio player for your music, with custom controls, playlist, filters, and search functionality.",
   "keywords": [
     "react",
+    "nextjs",
     "audio",
     "player",
     "mp3",
