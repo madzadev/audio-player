@@ -1,8 +1,8 @@
-# React/NextJS Audio Player
+<h1 text-align="center">
+React/NextJS Audio Player
+</h1>
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/madzadev/audio-player/graphs/commit-activity)
-[![GitHub forks](https://img.shields.io/github/forks/madzadev/audio-player?style=social&label=Fork&maxAge=2592000)](https://github.com/madzadev/audio-player/network/)
-[![GitHub stars](https://img.shields.io/github/stars/madzadev/audio-player?style=social&label=Star&maxAge=2592000)](https://github.com/madzadev/audio-player/stargazers/)
 [![GitHub issues](https://img.shields.io/github/issues/madzadev/audio-player)](https://github.com/madzadev/audio-player/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
