@@ -45,6 +45,21 @@ const tracks = [
 
 `trackList` is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
 
+## Config for NextJS
+
+If you are working on NextJS, there are 3 additional steps:
+
+1. `npm i next-images next-transpile-modules`
+2. create `next.config.js` in your project's root
+3. paste this in the newly created config file:
+
+```javascript
+const withImages = require("next-images");
+const withTM = require("next-transpile-modules")(["@madzadev/audio-player"]);
+
+module.exports = withImages(withTM());
+```
+
 ## Options
 
 The default values of available options props are displayed.

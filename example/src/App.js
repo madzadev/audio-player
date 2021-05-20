@@ -68,6 +68,23 @@ const App = () => {
         an array consisting of objects with <code>url</code>, <code>title</code>{" "}
         and <code>tags</code> keys.
       </p>
+      <h1>Config for NextJS</h1>
+      <p className="warning">
+        If you are working in NextJS, there are 3 additional steps:
+      </p>
+      <p>
+        1. <code>npm i next-images next-transpile-modules</code>
+      </p>
+      <p>
+        2. Create <code>next.config.js</code> in your project's root
+      </p>
+      <p>3. Paste this in the newly created config file:</p>
+      <SyntaxHighlighter language="javascript" style={coldarkDark}>
+        {`const withImages = require("next-images");
+        const withTM = require("next-transpile-modules")(["@madzadev/audio-player"]);
+
+        module.exports = withImages(withTM());`}
+      </SyntaxHighlighter>
       <h1>Options</h1>
       <p className="note">
         The default values of available options props are displayed.
@@ -126,7 +143,6 @@ const App = () => {
         <a href="https://www.datocms.com">DatoCMS</a> to manage your audio files
         and access them via API.
       </p>
-
       <Footer />
     </Wrapper>
   );
