@@ -1,5 +1,7 @@
 # React/NextJS Audio Player
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/madzadev/audio-player/graphs/commit-activity)
+
 ![Player Preview](https://i.imgur.com/qVX68ve.gif)
 
 ### Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
