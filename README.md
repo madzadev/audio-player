@@ -1,10 +1,9 @@
 # React/NextJS Audio Player
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/madzadev/audio-player/graphs/commit-activity)
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://audioplayer.madza.dev/)
-[![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/madzadev/audio-player/network/)
-[![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star&maxAge=2592000)](https://github.com/madzadev/audio-player/stargazers/)
-[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/madzadev/audio-player/issues/)
+[![GitHub forks](https://img.shields.io/github/forks/madzadev/audio-player?style=social&label=Fork&maxAge=2592000)](https://github.com/madzadev/audio-player/network/)
+[![GitHub stars](https://img.shields.io/github/stars/madzadev/audio-player?style=social&label=Star&maxAge=2592000)](https://github.com/madzadev/audio-player/stargazers/)
+[![GitHub issues](https://img.shields.io/github/issues/madzadev/audio-player)](https://github.com/madzadev/audio-player/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://choosealicense.com/licenses/mit/)
 
