@@ -6,7 +6,7 @@
 
 ---
 
-## Installationz
+## Installation
 
 ```javascript
  npm install @madzadev/audio-player
