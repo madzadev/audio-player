@@ -2,7 +2,7 @@
 
 ![Player Preview](https://i.imgur.com/qVX68ve.gif)
 
-## Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
+### Demo: [https://audioplayer.madza.dev](https://audioplayer.madza.dev)
 
 ---
 
