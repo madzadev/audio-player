@@ -17,6 +17,8 @@
  npm install @madzadev/audio-player
 ```
 
+If you are using NPM v7 or above, you need to add `--legacy-peer-deps` at the end of the command above.
+
 ## Usage
 
 ```javascript
