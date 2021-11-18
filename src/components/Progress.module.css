@@ -34,7 +34,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #b951e9;
+  background: var(--progressSlider);
   cursor: pointer;
 }
 
