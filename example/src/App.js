@@ -31,13 +31,14 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Player trackList={tracks} />
+      {/* <Player trackList={tracks} /> */}
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
       <p className="note">
-      If you are using NPM v7 or above, you need to add <code>--legacy-peer-deps</code> at the end of the command above.
+        If you are using NPM v7 or above, you need to add{" "}
+        <code>--legacy-peer-deps</code> at the end of the command above.
       </p>
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
