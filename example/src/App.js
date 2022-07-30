@@ -31,7 +31,7 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      {/* <Player trackList={tracks} /> */}
+      <Player trackList={tracks} />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
