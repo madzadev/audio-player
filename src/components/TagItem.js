@@ -1,15 +1,13 @@
-import styles from './TagItem.module.css'
-import React from 'react'
+import React from "react";
+import styles from "./TagItem.module.css";
 
-const TagItem = (props) => {
+export const TagItem = ({ status, onClick, tag }) => {
   return (
     <div
-      className={props.className == 'active' ? styles.active : styles.tag}
-      onClick={props.onClick}
+      className={`${styles.tag} ${status == "active" ? styles.active : ""}`}
+      onClick={onClick}
     >
-      {props.tag}
+      {tag}
     </div>
-  )
-}
-
-export default TagItem
+  );
+};

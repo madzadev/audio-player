@@ -1,9 +1,4 @@
 .wrapper {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .wrapper {
     width: 100%;
     margin: 20px auto;
     height: auto;
@@ -11,4 +6,3 @@
     display: inline-block;
     text-align: center;
   }
-}

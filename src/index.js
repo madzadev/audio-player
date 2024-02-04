@@ -1,25 +1,26 @@
-import styles from "./styles/Player.module.css";
-import { createGlobalStyle } from "styled-components";
-import React, { useState, useEffect, useRef } from "react";
+import "./index.css";
+import React, { useState, useEffect } from "react";
 
-import PageTemplate from "./components/PageTemplate";
-import PlayerTemplate from "./components/PlayerTemplate";
-import Title from "./components/Title";
-import Time from "./components/Time";
-import Progress from "./components/Progress";
-import ButtonsBox from "./components/ButtonsBox";
-import LoopCurrent from "./components/LoopCurrent";
-import Previous from "./components/Previous";
-import Play from "./components/Play";
-import Pause from "./components/Pause";
-import Next from "./components/Next";
-import Shuffle from "./components/Shuffle";
-import Volume from "./components/Volume";
-import PlaylistTemplate from "./components/PlaylistTemplate";
-import PlaylistItem from "./components/PlaylistItem";
-import TagsTemplate from "./components/TagsTemplate";
-import TagItem from "./components/TagItem";
-import Search from "./components/Search";
+import { PageTemplate } from "./components/PageTemplate";
+import { TagsTemplate } from "./components/TagsTemplate";
+import { TagItem } from "./components/TagItem";
+import { Search } from "./components/Search";
+import { PlayerTemplate } from "./components/PlayerTemplate";
+import { TitleAndTimeBox } from "./components/TitleAndTimeBox";
+import { Title } from "./components/Title";
+import { Time } from "./components/Time";
+import { Progress } from "./components/Progress";
+import { ButtonsAndVolumeBox } from "./components/ButtonsAndVolumeBox";
+import { ButtonsBox } from "./components/ButtonsBox";
+import { Loop } from "./components/Loop";
+import { Previous } from "./components/Previous";
+import { Play } from "./components/Play";
+import { Pause } from "./components/Pause";
+import { Next } from "./components/Next";
+import { Shuffle } from "./components/Shuffle";
+import { Volume } from "./components/Volume";
+import { PlaylistTemplate } from "./components/PlaylistTemplate";
+import { PlaylistItem } from "./components/PlaylistItem";
 
 import loopCurrentBtn from "icons/loop_current.png";
 import loopNoneBtn from "icons/loop_none.png";
@@ -30,28 +31,11 @@ import nextBtn from "icons/next.png";
 import shuffleAllBtn from "icons/shuffle_all.png";
 import shuffleNoneBtn from "icons/shuffle_none.png";
 
-const colors = `html{
-    --tagsBackground: #9440f3;
-    --tagsText: #ffffff;
-    --tagsBackgroundHoverActive: #2cc0a0;
-    --tagsTextHoverActive: #ffffff;
-    --searchBackground: #18191f;
-    --searchText: #ffffff;
-    --searchPlaceHolder: #575a77;
-    --playerBackground: #18191f;
-    --titleColor: #ffffff;
-    --timeColor: #ffffff;
-    --progressSlider: #9440f3;
-    --progressUsed: #ffffff;
-    --progressLeft: #151616;
-    --volumeSlider: #9440f3;
-    --volumeUsed: #ffffff;
-    --volumeLeft:  #151616;
-    --playlistBackground: #18191f;
-    --playlistText: #575a77;
-    --playlistBackgroundHoverActive:  #18191f;
-    --playlistTextHoverActive: #ffffff;
-  }`;
+const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+
+const colors = {
+  tagsBackground: "black",
+};
 
 const Player = ({
   trackList,
@@ -62,30 +46,31 @@ const Player = ({
   autoPlayNextTrack = true,
   customColorScheme = colors,
 }) => {
-  const [query, updateQuery] = useState("");
-
-  let playlist = [];
-
   const [audio, setAudio] = useState(null);
-  const [active, setActive] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasEnded, setHasEnded] = useState(false);
   const [title, setTitle] = useState("");
   const [length, setLength] = useState(0);
   const [time, setTime] = useState(0);
   const [slider, setSlider] = useState(1);
   const [drag, setDrag] = useState(0);
   const [volume, setVolume] = useState(0.8);
-  let [end, setEnd] = useState(0);
   const [shuffled, setShuffled] = useState(false);
   const [looped, setLooped] = useState(false);
 
+  let playlist = [];
   const [filter, setFilter] = useState([]);
   let [curTrack, setCurTrack] = useState(0);
+  const [query, updateQuery] = useState("");
 
-  const GlobalStyles = createGlobalStyle`
-${customColorScheme}
-`;
-
-  const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+  const tags = [];
+  trackList.forEach((track) => {
+    track.tags.forEach((tag) => {
+      if (!tags.includes(tag)) {
+        tags.push(tag);
+      }
+    });
+  });
 
   useEffect(() => {
     const audio = new Audio(trackList[curTrack].url);
@@ -103,9 +88,8 @@ ${customColorScheme}
 
     const setAudioVolume = () => setVolume(audio.volume);
 
-    const setAudioEnd = () => setEnd((end += 1));
+    const setAudioEnd = () => setHasEnded(!hasEnded);
 
-    // events on audio object
     audio.addEventListener("loadeddata", setAudioData);
     audio.addEventListener("timeupdate", setAudioTime);
     audio.addEventListener("volumechange", setAudioVolume);
@@ -114,37 +98,31 @@ ${customColorScheme}
     setAudio(audio);
     setTitle(trackList[curTrack].title);
 
+    for (const [variable, value] of Object.entries(colors)) {
+      document.documentElement.style.setProperty(`--${variable}`, value);
+    }
+
     return () => {
       audio.pause();
     };
   }, []);
 
-  const tags = [];
-  trackList.forEach((track) => {
-    track.tags.forEach((tag) => {
-      if (!tags.includes(tag)) {
-        tags.push(tag);
-      }
-    });
-  });
-
-  const shufflePlaylist = (arr) => {
-    if (arr.length === 1) return arr;
-    const rand = Math.floor(Math.random() * arr.length);
-    return [arr[rand], ...shufflePlaylist(arr.filter((_, i) => i != rand))];
-  };
-
-  const isInitialMount = useRef(true);
   useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-    } else {
+    if (audio != null) {
+      audio.src = trackList[curTrack].url;
+      setTitle(trackList[curTrack].title);
+      play();
+    }
+  }, [curTrack]);
+
+  useEffect(() => {
+    if (audio != null) {
       if (shuffled) {
         playlist = shufflePlaylist(playlist);
       }
-      !looped && autoPlayNextTrack ? next() : play();
+      !looped ? next() : play();
     }
-  }, [end]);
+  }, [hasEnded]);
 
   useEffect(() => {
     if (audio != null) {
@@ -160,33 +138,33 @@ ${customColorScheme}
     }
   }, [drag]);
 
-  const play = () => {
-    setActive(true);
-    audio.play();
-  };
+  useEffect(() => {
+    if (!playlist.includes(curTrack)) {
+      setCurTrack((curTrack = playlist[0]));
+    }
+  }, [filter]);
 
-  const pause = () => {
-    setActive(false);
-    audio.pause();
-  };
+  //  Handle functions
 
   const loop = () => {
     setLooped(!looped);
   };
-
-  useEffect(() => {
-    if (audio != null) {
-      audio.src = trackList[curTrack].url;
-      setTitle(trackList[curTrack].title);
-      play();
-    }
-  }, [curTrack]);
 
   const previous = () => {
     const index = playlist.indexOf(curTrack);
     index !== 0
       ? setCurTrack((curTrack = playlist[index - 1]))
       : setCurTrack((curTrack = playlist[playlist.length - 1]));
+  };
+
+  const play = () => {
+    setIsPlaying(true);
+    audio.play();
+  };
+
+  const pause = () => {
+    setIsPlaying(false);
+    audio.pause();
   };
 
   const next = () => {
@@ -200,26 +178,14 @@ ${customColorScheme}
     setShuffled(!shuffled);
   };
 
-  const sortCompare = (a, b) =>
-    !sortTracks ? null : a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
-
-  const playlistItemClickHandler = (e) => {
-    const num = Number(e.currentTarget.getAttribute("data-key"));
-    const index = playlist.indexOf(num);
-    setCurTrack((curTrack = playlist[index]));
-    play();
+  const shufflePlaylist = (arr) => {
+    if (arr.length === 1) return arr;
+    const rand = Math.floor(Math.random() * arr.length);
+    return [arr[rand], ...shufflePlaylist(arr.filter((_, i) => i !== rand))];
   };
 
-  const isInitialFilter = useRef(true);
-  useEffect(() => {
-    if (isInitialFilter.current) {
-      isInitialFilter.current = false;
-    } else {
-      if (!playlist.includes(curTrack)) {
-        setCurTrack((curTrack = playlist[0]));
-      }
-    }
-  }, [filter]);
+  const sortCompare = (a, b) =>
+    !sortTracks ? null : a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
 
   const tagClickHandler = (e) => {
     const tag = e.currentTarget.innerHTML;
@@ -231,42 +197,43 @@ ${customColorScheme}
     }
   };
 
+  const playlistItemClickHandler = (e) => {
+    const num = Number(e.currentTarget.getAttribute("data-key"));
+    const index = playlist.indexOf(num);
+    setCurTrack((curTrack = playlist[index]));
+    play();
+  };
+
   return (
     <PageTemplate>
-      <GlobalStyles />
-      {includeTags && (
-        <TagsTemplate>
-          {tags.map((tag, index) => {
-            return (
-              <TagItem
-                key={index}
-                className={
-                  filter.length !== 0 && filter.includes(tag) ? "active" : ""
-                }
-                tag={tag}
-                onClick={tagClickHandler}
-              />
-            );
-          })}
-        </TagsTemplate>
-      )}
-      {includeSearch && (
-        <Search
-          value={query}
-          onChange={(e) => updateQuery(e.target.value.toLowerCase())}
-          placeholder={`Search ${trackList.length} tracks...`}
-        />
-      )}
+      <TagsTemplate>
+        {tags.map((tag, index) => {
+          return (
+            <TagItem
+              key={index}
+              status={
+                filter.length !== 0 && filter.includes(tag) ? "active" : ""
+              }
+              tag={tag}
+              onClick={tagClickHandler}
+            />
+          );
+        })}
+      </TagsTemplate>
+      <Search
+        value={query}
+        onChange={(e) => updateQuery(e.target.value.toLowerCase())}
+        placeholder={`Search ${trackList.length} tracks...`}
+      />
       <PlayerTemplate>
-        <div className={styles.title_time_wrapper}>
+        <TitleAndTimeBox>
           <Title title={title} />
           <Time
             time={`${!time ? "0:00" : fmtMSS(time)}/${
               !length ? "0:00" : fmtMSS(length)
             }`}
           />
-        </div>
-
+        </TitleAndTimeBox>
         <Progress
           value={slider}
           onChange={(e) => {
@@ -276,14 +243,11 @@ ${customColorScheme}
           onMouseUp={play}
           onTouchEnd={play}
         />
-        <div className={styles.buttons_volume_wrapper}>
+        <ButtonsAndVolumeBox>
           <ButtonsBox>
-            <LoopCurrent
-              src={looped ? loopCurrentBtn : loopNoneBtn}
-              onClick={loop}
-            />
+            <Loop src={looped ? loopCurrentBtn : loopNoneBtn} onClick={loop} />
             <Previous src={previousBtn} onClick={previous} />
-            {active ? (
+            {isPlaying ? (
               <Pause src={pauseBtn} onClick={pause} />
             ) : (
               <Play src={playBtn} onClick={play} />
@@ -300,33 +264,30 @@ ${customColorScheme}
               setVolume(e.target.value / 100);
             }}
           />
-        </div>
+        </ButtonsAndVolumeBox>
       </PlayerTemplate>
-
-      {showPlaylist && (
-        <PlaylistTemplate>
-          {trackList.sort(sortCompare).map((el, index) => {
-            if (
-              filter.length === 0 ||
-              filter.some((filter) => el.tags.includes(filter))
-            ) {
-              if (el.title.toLowerCase().includes(query.toLowerCase())) {
-                playlist.push(index);
-                return (
-                  <PlaylistItem
-                    className={curTrack === index ? "active" : ""}
-                    key={index}
-                    data_key={index}
-                    title={el.title}
-                    src={el.url}
-                    onClick={playlistItemClickHandler}
-                  />
-                );
-              }
+      <PlaylistTemplate>
+        {trackList.sort(sortCompare).map((el, index) => {
+          if (
+            filter.length === 0 ||
+            filter.some((filter) => el.tags.includes(filter))
+          ) {
+            if (el.title.toLowerCase().includes(query.toLowerCase())) {
+              playlist.push(index);
+              return (
+                <PlaylistItem
+                  status={curTrack === index ? "active" : ""}
+                  key={index}
+                  data_key={index}
+                  title={el.title}
+                  src={el.url}
+                  onClick={playlistItemClickHandler}
+                />
+              );
             }
-          })}
-        </PlaylistTemplate>
-      )}
+          }
+        })}
+      </PlaylistTemplate>
     </PageTemplate>
   );
 };

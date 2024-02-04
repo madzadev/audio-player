@@ -1,17 +1,9 @@
 .wrapper {
-  width: 100%;
   border-radius: 10px;
   padding: 0 40px;
-  margin: 0 auto;
   background-color: var(--playerBackground);
   overflow: auto;
   font-family: 'Quicksand', sans-serif;
-}
-
-@media only screen and (max-width: 768px) {
-  .wrapper {
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 600px) {

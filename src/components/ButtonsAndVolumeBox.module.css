@@ -1,0 +1,11 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: auto 30%;
+    margin-bottom: 30px;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+    }
+  }

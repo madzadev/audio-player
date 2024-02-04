@@ -1,7 +1,7 @@
-import styles from "./Progress.module.css";
 import React from "react";
+import styles from "./Progress.module.css";
 
-const Progress = (props) => {
+export const Progress = ({ value, onChange, onMouseUp, onTouchEnd }) => {
   return (
     <div className={styles.container}>
       <input
@@ -9,20 +9,18 @@ const Progress = (props) => {
         min="1"
         max="100"
         step="1"
-        value={props.value}
+        value={value}
         className={styles.slider}
         id="myRange"
-        onChange={props.onChange}
-        onMouseUp={props.onMouseUp}
-        onTouchEnd={props.onTouchEnd}
+        onChange={onChange}
+        onMouseUp={onMouseUp}
+        onTouchEnd={onTouchEnd}
         style={{
           background: `linear-gradient(90deg, var(--progressUsed) ${Math.floor(
-            props.value
-          )}%, var(--progressLeft) ${Math.floor(props.value)}%)`,
+            value
+          )}%, var(--progressLeft) ${Math.floor(value)}%)`,
         }}
       />
     </div>
   );
 };
-
-export default Progress;

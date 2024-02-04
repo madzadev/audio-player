@@ -1,7 +1,3 @@
-.wrapper {
-  text-align: center;
-}
-
 .search {
   font-family: 'Quicksand', sans-serif;
   height: 40px;
@@ -16,14 +12,5 @@
 }
 
 .search::placeholder {
-  color: var(--searchPlaceHolder);
-  opacity: 1;
-}
-
-.search:-ms-input-placeholder {
-  color: var(--searchPlaceHolder);
-}
-
-.search::-ms-input-placeholder {
   color: var(--searchPlaceHolder);
 }

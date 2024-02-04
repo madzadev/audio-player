@@ -1,10 +1,6 @@
-import styles from './Pause.module.css'
-import React from 'react'
+import React from "react";
+import styles from "./Pause.module.css";
 
-const Pause = (props) => {
-  return (
-    <img className={styles.pause} src={props.src} onClick={props.onClick} />
-  )
-}
-
-export default Pause
+export const Pause = ({ src, onClick }) => {
+  return <img className={styles.pause} src={src} onClick={onClick} />;
+};

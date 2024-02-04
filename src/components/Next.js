@@ -1,8 +1,6 @@
-import React from 'react'
-import styles from './Next.module.css'
+import React from "react";
+import styles from "./Next.module.css";
 
-const Next = (props) => {
-  return <img className={styles.next} src={props.src} onClick={props.onClick} />
-}
-
-export default Next
+export const Next = ({ src, onClick }) => {
+  return <img className={styles.next} src={src} onClick={onClick} />;
+};

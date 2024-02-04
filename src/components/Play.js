@@ -1,8 +1,6 @@
-import styles from './Play.module.css'
-import React from 'react'
+import React from "react";
+import styles from "./Play.module.css";
 
-const Play = (props) => {
-  return <img className={styles.play} src={props.src} onClick={props.onClick} />
-}
-
-export default Play
+export const Play = ({ src, onClick }) => {
+  return <img className={styles.play} src={src} onClick={onClick} />;
+};

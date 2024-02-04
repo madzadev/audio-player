@@ -1,37 +1,21 @@
-.track {
+.item {
   background-color: var(--playlistBackground);
   color: var(--playlistText);
-  font-family: 'Poppins', sans-serif;
   text-align: center;
-  font-size: 16px;
   margin: 5px 0;
   padding: 3px 0;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.track:first-child {
-  margin: 0;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .active {
-  background-color: var(--playlistBackground);
   color: var(--playlistTextHoverActive);
-  text-align: center;
+  font-family: 'Quicksand', sans-serif;
   font-size: 18px;
-  margin: 5px 0;
-  padding: 3px 0;
-  cursor: pointer;
-
-  border-radius: 5px;
 }
 
-.active:first-child {
-  margin: 0;
-}
-
-.track:hover {
-  background-color: var(--playlistBackground);
+.item:hover {
   color: var(--playlistTextHoverActive);
-  border-radius: 5px;
 }

@@ -1,8 +1,6 @@
-import styles from './Title.module.css'
-import React from 'react'
+import React from "react";
+import styles from "./Title.module.css";
 
-const Title = (props) => {
-  return <h1 className={styles.title}>{props.title}</h1>
-}
-
-export default Title
+export const Title = ({ title }) => {
+  return <h1 className={styles.title}>{title}</h1>;
+};

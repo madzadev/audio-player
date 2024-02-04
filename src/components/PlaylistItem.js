@@ -1,18 +1,16 @@
-import styles from './PlaylistItem.module.css'
-import React from 'react'
+import React from "react";
+import styles from "./PlaylistItem.module.css";
 
-const PlaylistItem = (props) => {
+export const PlaylistItem = ({ status, data_key, src, title, onClick }) => {
   return (
     <p
-      className={props.className == 'active' ? styles.active : styles.track}
-      data-key={props.data_key}
-      src={props.src}
-      title={props.title}
-      onClick={props.onClick}
+      className={`${styles.item} ${status === "active" ? styles.active : ""}`}
+      data-key={data_key}
+      src={src}
+      title={title}
+      onClick={onClick}
     >
-      {props.title}
+      {title}
     </p>
-  )
-}
-
-export default PlaylistItem
+  );
+};

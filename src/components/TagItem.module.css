@@ -16,17 +16,6 @@
 .active {
   background-color: var(--tagsBackgroundHoverActive);
   color: var(--tagsTextHoverActive);
-  height: 40px;
-  min-width: 100px;
-  display: inline-grid;
-  place-items: center;
-  margin: 0 5px;
-  transition: transform 0.3s;
-  padding: 0 10px;
-  font-family: 'Varela Round', sans-serif;
-  cursor: pointer;
-  border-radius: 10px;
-  font-size: 18px;
 }
 
 .tag:hover {
