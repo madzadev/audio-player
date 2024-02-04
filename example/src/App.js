@@ -31,7 +31,7 @@ const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Player trackList={tracks} />
+      <Player trackList={tracks} sortTracks={false} />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
@@ -99,6 +99,7 @@ const App = () => {
         includeTags={true}
         includeSearch={true}
         showPlaylist={true}
+        sortTracks={true}
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>

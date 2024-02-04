@@ -58,6 +58,7 @@ const Player = ({
   includeTags = true,
   includeSearch = true,
   showPlaylist = true,
+  sortTracks = true,
   autoPlayNextTrack = true,
   customColorScheme = colors,
 }) => {
@@ -199,6 +200,9 @@ ${customColorScheme}
     setShuffled(!shuffled);
   };
 
+  const sortCompare = (a, b) =>
+    !sortTracks ? null : a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
+
   const playlistItemClickHandler = (e) => {
     const num = Number(e.currentTarget.getAttribute("data-key"));
     const index = playlist.indexOf(num);
@@ -301,28 +305,26 @@ ${customColorScheme}
 
       {showPlaylist && (
         <PlaylistTemplate>
-          {trackList
-            .sort((a, b) => (a.title > b.title ? 1 : -1))
-            .map((el, index) => {
-              if (
-                filter.length === 0 ||
-                filter.some((filter) => el.tags.includes(filter))
-              ) {
-                if (el.title.toLowerCase().includes(query.toLowerCase())) {
-                  playlist.push(index);
-                  return (
-                    <PlaylistItem
-                      className={curTrack === index ? "active" : ""}
-                      key={index}
-                      data_key={index}
-                      title={el.title}
-                      src={el.url}
-                      onClick={playlistItemClickHandler}
-                    />
-                  );
-                }
+          {trackList.sort(sortCompare).map((el, index) => {
+            if (
+              filter.length === 0 ||
+              filter.some((filter) => el.tags.includes(filter))
+            ) {
+              if (el.title.toLowerCase().includes(query.toLowerCase())) {
+                playlist.push(index);
+                return (
+                  <PlaylistItem
+                    className={curTrack === index ? "active" : ""}
+                    key={index}
+                    data_key={index}
+                    title={el.title}
+                    src={el.url}
+                    onClick={playlistItemClickHandler}
+                  />
+                );
               }
-            })}
+            }
+          })}
         </PlaylistTemplate>
       )}
     </PageTemplate>
