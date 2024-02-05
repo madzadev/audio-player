@@ -28,7 +28,7 @@ const tracks = [
 ];
 
 // const colors = {
-//   tagsBackground: "red",
+//   tagsBackground: "#9440f3",
 //   tagsText: "#ffffff",
 //   tagsBackgroundHoverActive: "#2cc0a0",
 //   tagsTextHoverActive: "#ffffff",
