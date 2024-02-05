@@ -86,7 +86,7 @@ The default values of available options props are displayed.
 
 You can further customize the player UI by editing the colors variable below.
 
-Pre-defined color schemes are planned in the future.
+Use only those key-value pairs, that you want to customize.
 
 ```javascript
 const colors = {
@@ -119,4 +119,4 @@ const colors = {
 
 ## Final notes
 
-It's recommended to use CMS like [Contentful](https://www.contentful.com) or [DatoCMS](https://www.datocms.com/) to manage your audio files and access them via API.
+It's recommended to use CMS like [Contentful](https://www.contentful.com) to manage your audio files and access them via API.
