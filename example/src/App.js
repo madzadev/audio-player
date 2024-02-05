@@ -27,11 +27,34 @@ const tracks = [
   },
 ];
 
+// const colors = {
+//   tagsBackground: "red",
+//   tagsText: "#ffffff",
+//   tagsBackgroundHoverActive: "#2cc0a0",
+//   tagsTextHoverActive: "#ffffff",
+//   searchBackground: "#18191f",
+//   searchText: "#ffffff",
+//   searchPlaceHolder: "#575a77",
+//   playerBackground: "#18191f",
+//   titleColor: "#ffffff",
+//   timeColor: "#ffffff",
+//   progressSlider: "#9440f3",
+//   progressUsed: "#ffffff",
+//   progressLeft: "#151616",
+//   volumeSlider: "#9440f3",
+//   volumeUsed: "#ffffff",
+//   volumeLeft: "#151616",
+//   playlistBackground: "#18191f",
+//   playlistText: "#575a77",
+//   playlistBackgroundHoverActive: "#18191f",
+//   playlistTextHoverActive: "#ffffff",
+// };
+
 const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Player trackList={tracks} sortTracks={false} />
+      <Player trackList={tracks} />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}

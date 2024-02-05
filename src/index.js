@@ -33,29 +33,6 @@ import shuffleNoneBtn from "icons/shuffle_none.png";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
-const colors = {
-  tagsBackground: "#9440f3",
-  tagsText: "#ffffff",
-  tagsBackgroundHoverActive: "#2cc0a0",
-  tagsTextHoverActive: "#ffffff",
-  searchBackground: "#18191f",
-  searchText: "#ffffff",
-  searchPlaceHolder: "#575a77",
-  playerBackground: "#18191f",
-  titleColor: "#ffffff",
-  timeColor: "#ffffff",
-  progressSlider: "#9440f3",
-  progressUsed: "#ffffff",
-  progressLeft: "#151616",
-  volumeSlider: "#9440f3",
-  volumeUsed: "#ffffff",
-  volumeLeft: "#151616",
-  playlistBackground: "#18191f",
-  playlistText: "#575a77",
-  playlistBackgroundHoverActive: "#18191f",
-  playlistTextHoverActive: "#ffffff",
-};
-
 const Player = ({
   trackList,
   includeTags = true,
@@ -63,7 +40,7 @@ const Player = ({
   showPlaylist = true,
   sortTracks = true,
   autoPlayNextTrack = true,
-  customColorScheme = colors,
+  customColorScheme = {},
 }) => {
   const [audio, setAudio] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -117,7 +94,7 @@ const Player = ({
     setAudio(audio);
     setTitle(trackList[curTrack].title);
 
-    for (const [variable, value] of Object.entries(colors)) {
+    for (const [variable, value] of Object.entries(customColorScheme)) {
       document.documentElement.style.setProperty(`--${variable}`, value);
     }
 
