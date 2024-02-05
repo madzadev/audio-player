@@ -36,10 +36,7 @@ const App = () => {
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
-      <p className="note">
-        If you are using NPM v7 or above, you need to add{" "}
-        <code>--legacy-peer-deps</code> at the end of the command above.
-      </p>
+
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`import Player from '@madzadev/audio-player'
@@ -72,15 +69,7 @@ const App = () => {
         an array consisting of objects with <code>url</code>, <code>title</code>{" "}
         and <code>tags</code> keys.
       </p>
-      <h1>Config for NextJS</h1>
-      <p className="warning">
-        If you are working on NextJS, edit the <code>next.config.mjs</code>:
-      </p>
-      <SyntaxHighlighter language="javascript" style={coldarkDark}>
-        {`export default {
-        transpilePackages: ["@madzadev/audio-player"],
-        }`}
-      </SyntaxHighlighter>
+
       <h1>Options</h1>
       <p className="note">
         The default values of available options props are displayed.
@@ -95,6 +84,7 @@ const App = () => {
         autoPlayNextTrack={true}
       />`}
       </SyntaxHighlighter>
+
       <h1>Color schemas</h1>
       <p className="warning">
         You can further customize the player UI by editing the colors object
@@ -133,6 +123,7 @@ const App = () => {
         customColorScheme={colors}
       />`}
       </SyntaxHighlighter>
+
       <h1>Final notes</h1>
       <p className="warning">
         It's recommended to use CMS like a{" "}

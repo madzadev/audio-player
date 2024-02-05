@@ -22,19 +22,37 @@ import { Volume } from "./components/Volume";
 import { PlaylistTemplate } from "./components/PlaylistTemplate";
 import { PlaylistItem } from "./components/PlaylistItem";
 
-import loopCurrentBtn from "icons/loop_current.png";
-import loopNoneBtn from "icons/loop_none.png";
-import previousBtn from "icons/previous.png";
-import playBtn from "icons/play.png";
-import pauseBtn from "icons/pause.png";
-import nextBtn from "icons/next.png";
-import shuffleAllBtn from "icons/shuffle_all.png";
-import shuffleNoneBtn from "icons/shuffle_none.png";
+import loopCurrentBtn from "./icons/loop_current.png";
+import loopNoneBtn from "./icons/loop_none.png";
+import previousBtn from "./icons/previous.png";
+import playBtn from "./icons/play.png";
+import pauseBtn from "./icons/pause.png";
+import nextBtn from "./icons/next.png";
+import shuffleAllBtn from "./icons/shuffle_all.png";
+import shuffleNoneBtn from "./icons/shuffle_none.png";
 
 const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
 
+const tracks = [
+  {
+    url: "https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3",
+    title: "Madza - Chords of Life",
+    tags: ["house"],
+  },
+  {
+    url: "https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3",
+    title: "Madza - Late Night Drive",
+    tags: ["dnb"],
+  },
+  {
+    url: "https://audioplayer.madza.dev/Madza-Persistence.mp3",
+    title: "Madza - Persistence",
+    tags: ["dubstep"],
+  },
+];
+
 const Player = ({
-  trackList,
+  trackList = tracks,
   includeTags = true,
   includeSearch = true,
   showPlaylist = true,

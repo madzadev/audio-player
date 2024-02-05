@@ -17,8 +17,6 @@
  npm install @madzadev/audio-player
 ```
 
-If you are using NPM v7 or above, you need to add `--legacy-peer-deps` at the end of the command above.
-
 ## Usage
 
 ```javascript
@@ -51,16 +49,6 @@ const tracks = [
 ```
 
 `trackList` is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
-
-## Config for NextJS
-
-If you are working on NextJS, edit the `next.config.mjs`:
-
-```javascript
-export default {
-  transpilePackages: ["@madzadev/audio-player"],
-};
-```
 
 ## Options
 
