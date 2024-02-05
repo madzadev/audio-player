@@ -6,8 +6,15 @@ import Footer from "./components/Footer";
 import Player from "@madzadev/audio-player";
 import "@madzadev/audio-player/dist/index.css";
 
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
+import jsx from "react-syntax-highlighter/dist/esm/languages/prism/jsx";
+import javascript from "react-syntax-highlighter/dist/esm/languages/prism/javascript";
+SyntaxHighlighter.registerLanguage("bash", bash);
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage("javascript", javascript);
 
 const tracks = [
   {
