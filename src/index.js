@@ -225,25 +225,29 @@ const Player = ({
 
   return (
     <PageTemplate>
-      <TagsTemplate>
-        {tags.map((tag, index) => {
-          return (
-            <TagItem
-              key={index}
-              status={
-                filter.length !== 0 && filter.includes(tag) ? "active" : ""
-              }
-              tag={tag}
-              onClick={tagClickHandler}
-            />
-          );
-        })}
-      </TagsTemplate>
-      <Search
-        value={query}
-        onChange={(e) => updateQuery(e.target.value.toLowerCase())}
-        placeholder={`Search ${trackList.length} tracks...`}
-      />
+      {includeTags && (
+        <TagsTemplate>
+          {tags.map((tag, index) => {
+            return (
+              <TagItem
+                key={index}
+                status={
+                  filter.length !== 0 && filter.includes(tag) ? "active" : ""
+                }
+                tag={tag}
+                onClick={tagClickHandler}
+              />
+            );
+          })}
+        </TagsTemplate>
+      )}
+      {includeSearch && (
+        <Search
+          value={query}
+          onChange={(e) => updateQuery(e.target.value.toLowerCase())}
+          placeholder={`Search ${trackList.length} tracks...`}
+        />
+      )}
       <PlayerTemplate>
         <TitleAndTimeBox>
           <Title title={title} />
@@ -285,28 +289,30 @@ const Player = ({
           />
         </ButtonsAndVolumeBox>
       </PlayerTemplate>
-      <PlaylistTemplate>
-        {trackList.sort(sortCompare).map((el, index) => {
-          if (
-            filter.length === 0 ||
-            filter.some((filter) => el.tags.includes(filter))
-          ) {
-            if (el.title.toLowerCase().includes(query.toLowerCase())) {
-              playlist.push(index);
-              return (
-                <PlaylistItem
-                  status={curTrack === index ? "active" : ""}
-                  key={index}
-                  data_key={index}
-                  title={el.title}
-                  src={el.url}
-                  onClick={playlistItemClickHandler}
-                />
-              );
+      {showPlaylist && (
+        <PlaylistTemplate>
+          {trackList.sort(sortCompare).map((el, index) => {
+            if (
+              filter.length === 0 ||
+              filter.some((filter) => el.tags.includes(filter))
+            ) {
+              if (el.title.toLowerCase().includes(query.toLowerCase())) {
+                playlist.push(index);
+                return (
+                  <PlaylistItem
+                    status={curTrack === index ? "active" : ""}
+                    key={index}
+                    data_key={index}
+                    title={el.title}
+                    src={el.url}
+                    onClick={playlistItemClickHandler}
+                  />
+                );
+              }
             }
-          }
-        })}
-      </PlaylistTemplate>
+          })}
+        </PlaylistTemplate>
+      )}
     </PageTemplate>
   );
 };
