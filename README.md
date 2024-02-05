@@ -54,17 +54,15 @@ const tracks = [
 
 ## Config for NextJS
 
-If you are working on NextJS, there are 3 additional steps:
+If you are working on NextJS, there are 2 additional steps:
 
-1. `npm i next-images next-transpile-modules`
-2. create `next.config.js` in your project's root
-3. paste this in the newly created config file:
+1. `npm i next-transpile-modules`
+2. edit the `next.config.mjs` settings:
 
 ```javascript
-const withImages = require("next-images");
-const withTM = require("next-transpile-modules")(["@madzadev/audio-player"]);
-
-module.exports = withImages(withTM());
+export default {
+  transpilePackages: ["@madzadev/audio-player"],
+};
 ```
 
 ## Options
