@@ -54,10 +54,7 @@ const tracks = [
 
 ## Config for NextJS
 
-If you are working on NextJS, there are 2 additional steps:
-
-1. `npm i next-transpile-modules`
-2. edit the `next.config.mjs` settings:
+If you are working on NextJS, edit the `next.config.mjs`:
 
 ```javascript
 export default {
