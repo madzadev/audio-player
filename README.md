@@ -77,6 +77,7 @@ The default values of available options props are displayed.
   includeTags={true}
   includeSearch={true}
   showPlaylist={true}
+  sortTracks={true}
   autoPlayNextTrack={true}
 />
 ```
@@ -88,28 +89,28 @@ You can further customize the player UI by editing the colors variable below.
 Pre-defined color schemes are planned in the future.
 
 ```javascript
-const colors = `html {
-          --tagsBackground: #9440f3;
-          --tagsText: #ffffff;
-          --tagsBackgroundHoverActive: #2cc0a0;
-          --tagsTextHoverActive: #ffffff;
-          --searchBackground: #18191f;
-          --searchText: #ffffff;
-          --searchPlaceHolder: #575a77;
-          --playerBackground: #18191f;
-          --titleColor: #ffffff; 
-          --timeColor: #ffffff;
-          --progressSlider: #9440f3;
-          --progressUsed: #ffffff;
-          --progressLeft: #151616;
-          --volumeSlider: #9440f3;
-          --volumeUsed: #ffffff;
-          --volumeLeft:  #151616;
-          --playlistBackground: #18191f;
-          --playlistText: #575a77;
-          --playlistBackgroundHoverActive:  #18191f;
-          --playlistTextHoverActive: #ffffff;
-      }`;
+const colors = {
+  tagsBackground: "#9440f3",
+  tagsText: "#ffffff",
+  tagsBackgroundHoverActive: "#2cc0a0",
+  tagsTextHoverActive: "#ffffff",
+  searchBackground: "#18191f",
+  searchText: "#ffffff",
+  searchPlaceHolder: "#575a77",
+  playerBackground: "#18191f",
+  titleColor: "#ffffff",
+  timeColor: "#ffffff",
+  progressSlider: "#9440f3",
+  progressUsed: "#ffffff",
+  progressLeft: "#151616",
+  volumeSlider: "#9440f3",
+  volumeUsed: "#ffffff",
+  volumeLeft: "#151616",
+  playlistBackground: "#18191f",
+  playlistText: "#575a77",
+  playlistBackgroundHoverActive: "#18191f",
+  playlistTextHoverActive: "#ffffff",
+};
 ```
 
 ```javascript
