@@ -128,11 +128,11 @@ const App = () => {
       </SyntaxHighlighter>
       <h1>Color schemas</h1>
       <p className="warning">
-        You can further customize the player UI by editing the colors variable
+        You can further customize the player UI by editing the colors object
         below.
       </p>
       <p className="note">
-        Use only those key-value pairs, that you want to customize.
+        Include only those properties, that you want to customize.
       </p>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const colors = {

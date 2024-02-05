@@ -84,9 +84,9 @@ The default values of available options props are displayed.
 
 ## Color schemes
 
-You can further customize the player UI by editing the colors variable below.
+You can further customize the player UI by editing the colors object below.
 
-Use only those key-value pairs, that you want to customize.
+Include only those properties, that you want to customize.
 
 ```javascript
 const colors = {
