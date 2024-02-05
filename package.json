@@ -45,8 +45,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {
-    "styled-components": "^5.2.1"
-  }
+  ]
 }
