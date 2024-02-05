@@ -27,29 +27,6 @@ const tracks = [
   },
 ];
 
-// const colors = {
-//   tagsBackground: "#9440f3",
-//   tagsText: "#ffffff",
-//   tagsBackgroundHoverActive: "#2cc0a0",
-//   tagsTextHoverActive: "#ffffff",
-//   searchBackground: "#18191f",
-//   searchText: "#ffffff",
-//   searchPlaceHolder: "#575a77",
-//   playerBackground: "#18191f",
-//   titleColor: "#ffffff",
-//   timeColor: "#ffffff",
-//   progressSlider: "#9440f3",
-//   progressUsed: "#ffffff",
-//   progressLeft: "#151616",
-//   volumeSlider: "#9440f3",
-//   volumeUsed: "#ffffff",
-//   volumeLeft: "#151616",
-//   playlistBackground: "#18191f",
-//   playlistText: "#575a77",
-//   playlistBackgroundHoverActive: "#18191f",
-//   playlistTextHoverActive: "#ffffff",
-// };
-
 const App = () => {
   return (
     <Wrapper>
@@ -97,20 +74,12 @@ const App = () => {
       </p>
       <h1>Config for NextJS</h1>
       <p className="warning">
-        If you are working in NextJS, there are 3 additional steps:
+        If you are working on NextJS, edit the <code>next.config.mjs</code>:
       </p>
-      <p>
-        1. <code>npm i next-images next-transpile-modules</code>
-      </p>
-      <p>
-        2. Create <code>next.config.js</code> in your project's root
-      </p>
-      <p>3. Paste this in the newly created config file:</p>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
-        {`const withImages = require("next-images");
-        const withTM = require("next-transpile-modules")(["@madzadev/audio-player"]);
-
-        module.exports = withImages(withTM());`}
+        {`export default {
+        transpilePackages: ["@madzadev/audio-player"],
+        }`}
       </SyntaxHighlighter>
       <h1>Options</h1>
       <p className="note">
