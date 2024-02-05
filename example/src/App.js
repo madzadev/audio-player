@@ -132,7 +132,7 @@ const App = () => {
         below.
       </p>
       <p className="note">
-        Pre-defined color schemes are planned in the future.
+        Use only those key-value pairs, that you want to customize.
       </p>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const colors = {
@@ -167,9 +167,8 @@ const App = () => {
       <h1>Final notes</h1>
       <p className="warning">
         It's recommended to use CMS like a{" "}
-        <a href="https://www.contentful.com">Contentful</a> or{" "}
-        <a href="https://www.datocms.com">DatoCMS</a> to manage your audio files
-        and access them via API.
+        <a href="https://www.contentful.com">Contentful</a> to manage your audio
+        files and access them via API.
       </p>
       <Footer />
     </Wrapper>
