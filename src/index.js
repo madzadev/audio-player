@@ -139,7 +139,7 @@ const Player = ({
       if (shuffled) {
         playlist = shufflePlaylist(playlist);
       }
-      !looped ? next() : play();
+      !looped && autoPlayNextTrack ? next() : play();
     }
   }, [hasEnded]);
 
