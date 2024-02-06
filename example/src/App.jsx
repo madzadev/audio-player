@@ -72,15 +72,18 @@ const App = () => {
         {`<Player trackList={tracks} />`}
       </SyntaxHighlighter>
       <p className="warning">
-        <code>'trackList'</code> is the mandatory prop and requires to pass in
-        an array consisting of objects with <code>url</code>, <code>title</code>{" "}
-        and <code>tags</code> keys.
+        The only mandatory prop is <code>trackList</code> for audio source.
+      </p>
+      <p className="warning">
+        It requires to pass in an array consisting of objects with{" "}
+        <code>url</code>, <code>title</code> and <code>tags</code> keys.
       </p>
 
       <h1>Options</h1>
       <p className="note">
-        The default values of available options props are displayed.
+        There are multiple optional props you can use to configure the player.
       </p>
+      <p className="note">The default values of them are displayed below.</p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Player
         trackList={tracks}
@@ -94,8 +97,8 @@ const App = () => {
 
       <h1>Color schemas</h1>
       <p className="warning">
-        You can further customize the player UI by editing the colors object
-        below.
+        You can customize the design of the player by editing the{" "}
+        <code>colors</code> object below.
       </p>
       <p className="note">
         Include only those properties, that you want to customize.
@@ -115,6 +118,7 @@ const App = () => {
             progressSlider: "#9440f3",
             progressUsed: "#ffffff",
             progressLeft: "#151616",
+            bufferLoaded: "#202222",
             volumeSlider: "#9440f3",
             volumeUsed: "#ffffff",
             volumeLeft: "#151616",
