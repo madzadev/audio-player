@@ -187,14 +187,13 @@ const Player = ({
       if (isInBufferedRange) {
         audio.currentTime = val;
       } else {
-        console.log("outside");
         pause();
         setSlider((val * 100) / audio.duration);
         const waitingHandler = () => {
-          console.log("waiting for data");
+          // console.log("waiting for data");
           if (audio.readyState === 4) {
             audio.removeEventListener("waiting", waitingHandler);
-            // audio.currentTime = val;
+            audio.currentTime = val;
           }
         };
         audio.addEventListener("waiting", waitingHandler);
