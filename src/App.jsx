@@ -55,7 +55,7 @@ const Player = ({
   trackList = tracks,
   includeTags = true,
   includeSearch = true,
-  showPlaylist = true,
+  showPlaylist = false,
   sortTracks = true,
   autoPlayNextTrack = true,
   customColorScheme = {},
@@ -331,30 +331,28 @@ const Player = ({
           />
         </ButtonsAndVolumeBox>
       </PlayerTemplate>
-      {showPlaylist && (
-        <PlaylistTemplate>
-          {trackList.sort(sortCompare).map((el, index) => {
-            if (
-              filter.length === 0 ||
-              filter.some((filter) => el.tags.includes(filter))
-            ) {
-              if (el.title.toLowerCase().includes(query.toLowerCase())) {
-                playlist.push(index);
-                return (
-                  <PlaylistItem
-                    status={curTrack === index ? "active" : ""}
-                    key={index}
-                    data_key={index}
-                    title={el.title}
-                    src={el.url}
-                    onClick={playlistItemClickHandler}
-                  />
-                );
-              }
+      <PlaylistTemplate visibility={showPlaylist}>
+        {trackList.sort(sortCompare).map((el, index) => {
+          if (
+            filter.length === 0 ||
+            filter.some((filter) => el.tags.includes(filter))
+          ) {
+            if (el.title.toLowerCase().includes(query.toLowerCase())) {
+              playlist.push(index);
+              return (
+                <PlaylistItem
+                  status={curTrack === index ? "active" : ""}
+                  key={index}
+                  data_key={index}
+                  title={el.title}
+                  src={el.url}
+                  onClick={playlistItemClickHandler}
+                />
+              );
             }
-          })}
-        </PlaylistTemplate>
-      )}
+          }
+        })}
+      </PlaylistTemplate>
     </PageTemplate>
   );
 };
