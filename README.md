@@ -13,7 +13,9 @@
 
 ## Requirements
 
-Based on Vite v5, Node.js 18 / 20+ is required.
+Node.js 18.x / 20+ is required.
+
+Tested on React 18.2.0 and NextJS 14.1.0.
 
 ## Installation
 
