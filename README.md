@@ -11,6 +11,10 @@
 
 ---
 
+## Requirements
+
+Based on Vite v5, Node.js 18 / 20+ is required.
+
 ## Installation
 
 ```javascript
