@@ -6,8 +6,7 @@ const Header = () => {
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Audio Player for your Music</h1>
       <p className={styles.description}>
-        Based on Vite v5, requires Node v18 or newer. Tested on React 18.2.0 and
-        NextJS 14.1.0.
+        Based on Vite v5, Node.js 18 / 20+ is required.
       </p>
     </div>
   );
