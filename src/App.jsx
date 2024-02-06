@@ -139,6 +139,13 @@ const Player = ({
         setTitle(trackList[curTrack].title);
         play();
       };
+
+      const setAudioEnd = () => setHasEnded(!hasEnded);
+      audio.addEventListener("ended", setAudioEnd);
+
+      return () => {
+        audio.removeEventListener("ended", setAudioEnd);
+      };
     }
   }, [curTrack]);
 
