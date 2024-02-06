@@ -96,7 +96,7 @@ const App = () => {
       </SyntaxHighlighter>
 
       <h1>Color schemas</h1>
-      <p className="warning">
+      <p className="note">
         You can customize the design of the player by editing the{" "}
         <code>colors</code> object below.
       </p>
@@ -136,7 +136,7 @@ const App = () => {
       </SyntaxHighlighter>
 
       <h1>Final notes</h1>
-      <p className="warning">
+      <p className="note">
         It's recommended to use CMS like a{" "}
         <a href="https://www.contentful.com">Contentful</a> to manage your audio
         files and access them via API.
