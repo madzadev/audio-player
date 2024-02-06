@@ -106,18 +106,19 @@ const Player = ({
       setSlider(curTime ? ((curTime * 100) / audio.duration).toFixed(1) : 0);
     };
 
+    const setAudioProgress = () => {
+      const bufferedPercentage = (audio.buffered.end(0) / audio.duration) * 100;
+      setBuffer(bufferedPercentage.toFixed(2));
+    };
+
     const setAudioVolume = () => setVolume(audio.volume);
     const setAudioEnd = () => setHasEnded(!hasEnded);
 
     audio.addEventListener("loadeddata", setAudioData);
     audio.addEventListener("timeupdate", setAudioTime);
+    audio.addEventListener("progress", setAudioProgress);
     audio.addEventListener("volumechange", setAudioVolume);
     audio.addEventListener("ended", setAudioEnd);
-
-    audio.addEventListener("progress", () => {
-      const bufferedPercentage = (audio.buffered.end(0) / audio.duration) * 100;
-      setBuffer(bufferedPercentage.toFixed(2));
-    });
 
     setAudio(audio);
     setTitle(trackList[curTrack].title);
@@ -125,6 +126,7 @@ const Player = ({
     return () => {
       audio.removeEventListener("loadeddata", setAudioData);
       audio.removeEventListener("timeupdate", setAudioTime);
+      audio.removeEventListener("progress", setAudioProgress);
       audio.removeEventListener("volumechange", setAudioVolume);
       audio.removeEventListener("ended", setAudioEnd);
     };
@@ -140,7 +142,9 @@ const Player = ({
         play();
       };
 
-      const setAudioEnd = () => setHasEnded(!hasEnded);
+      const setAudioEnd = () => {
+        setHasEnded(!hasEnded);
+      };
       audio.addEventListener("ended", setAudioEnd);
 
       return () => {
