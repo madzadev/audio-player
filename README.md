@@ -48,7 +48,7 @@ const tracks = [
 <Player trackList={tracks} />
 ```
 
-The only mandatory prop is `trackList`.
+The only mandatory prop is `trackList` for audio source.
 
 It requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
 
@@ -71,7 +71,7 @@ The default values of them are displayed below.
 
 ## Color schemes
 
-You can further customize the player UI by editing the colors object below.
+You can customize the design of the player by editing the `colors` object below.
 
 Include only those properties, that you want to customize.
 
