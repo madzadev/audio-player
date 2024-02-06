@@ -203,6 +203,29 @@ const Player = ({
   }, [drag]);
 
   useEffect(() => {
+    if (audio != null) {
+      let setAudioEnd;
+
+      if (looped) {
+        setAudioEnd = () => {
+          audio.currentTime = 0;
+          audio.play();
+        };
+      } else {
+        setAudioEnd = () => {
+          setHasEnded(!hasEnded);
+        };
+      }
+
+      audio.addEventListener("ended", setAudioEnd);
+
+      return () => {
+        audio.removeEventListener("ended", setAudioEnd);
+      };
+    }
+  }, [looped]);
+
+  useEffect(() => {
     if (!playlist.includes(curTrack)) {
       setCurTrack((curTrack = playlist[0]));
     }
