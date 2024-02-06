@@ -147,7 +147,7 @@ const Player = ({
       if (shuffled) {
         playlist = shufflePlaylist(playlist);
       }
-      !looped && autoPlayNextTrack ? next() : play();
+      looped ? play() : autoPlayNextTrack && !looped && next();
     }
   }, [hasEnded]);
 
@@ -162,11 +162,29 @@ const Player = ({
       pause();
       const val = Math.round((drag * audio.duration) / 100);
       const bufferedRanges = audio.buffered;
+
+      let isInBufferedRange = false;
       for (let i = 0; i < bufferedRanges.length; i++) {
         if (val >= bufferedRanges.start(i) && val <= bufferedRanges.end(i)) {
-          audio.currentTime = val;
+          isInBufferedRange = true;
           break;
         }
+      }
+
+      if (isInBufferedRange) {
+        audio.currentTime = val;
+      } else {
+        console.log("outside");
+        pause();
+        setSlider((val * 100) / audio.duration);
+        const waitingHandler = () => {
+          console.log("waiting for data");
+          if (audio.readyState === 4) {
+            audio.removeEventListener("waiting", waitingHandler);
+            // audio.currentTime = val;
+          }
+        };
+        audio.addEventListener("waiting", waitingHandler);
       }
     }
   }, [drag]);
