@@ -67,6 +67,7 @@ const Player = ({
   const [length, setLength] = useState(0);
   const [time, setTime] = useState(0);
   const [slider, setSlider] = useState(1);
+  const [buffer, setBuffer] = useState(0);
   const [drag, setDrag] = useState(0);
   const [volume, setVolume] = useState(0.8);
   const [shuffled, setShuffled] = useState(false);
@@ -86,8 +87,13 @@ const Player = ({
     });
   });
 
+  for (const [variable, value] of Object.entries(customColorScheme)) {
+    document.documentElement.style.setProperty(`--${variable}`, value);
+  }
+
   useEffect(() => {
     const audio = new Audio(trackList[curTrack].url);
+    audio.load();
 
     const setAudioData = () => {
       setLength(audio.duration);
@@ -101,7 +107,6 @@ const Player = ({
     };
 
     const setAudioVolume = () => setVolume(audio.volume);
-
     const setAudioEnd = () => setHasEnded(!hasEnded);
 
     audio.addEventListener("loadeddata", setAudioData);
@@ -109,23 +114,31 @@ const Player = ({
     audio.addEventListener("volumechange", setAudioVolume);
     audio.addEventListener("ended", setAudioEnd);
 
+    audio.addEventListener("progress", () => {
+      const bufferedPercentage = (audio.buffered.end(0) / audio.duration) * 100;
+      setBuffer(bufferedPercentage.toFixed(2));
+    });
+
     setAudio(audio);
     setTitle(trackList[curTrack].title);
 
-    for (const [variable, value] of Object.entries(customColorScheme)) {
-      document.documentElement.style.setProperty(`--${variable}`, value);
-    }
-
     return () => {
-      audio.pause();
+      audio.removeEventListener("loadeddata", setAudioData);
+      audio.removeEventListener("timeupdate", setAudioTime);
+      audio.removeEventListener("volumechange", setAudioVolume);
+      audio.removeEventListener("ended", setAudioEnd);
     };
   }, []);
 
   useEffect(() => {
-    if (audio != null) {
+    if (audio !== null) {
       audio.src = trackList[curTrack].url;
-      setTitle(trackList[curTrack].title);
-      play();
+      audio.load();
+
+      audio.oncanplay = () => {
+        setTitle(trackList[curTrack].title);
+        play();
+      };
     }
   }, [curTrack]);
 
@@ -148,7 +161,13 @@ const Player = ({
     if (audio != null) {
       pause();
       const val = Math.round((drag * audio.duration) / 100);
-      audio.currentTime = val;
+      const bufferedRanges = audio.buffered;
+      for (let i = 0; i < bufferedRanges.length; i++) {
+        if (val >= bufferedRanges.start(i) && val <= bufferedRanges.end(i)) {
+          audio.currentTime = val;
+          break;
+        }
+      }
     }
   }, [drag]);
 
@@ -254,6 +273,7 @@ const Player = ({
         </TitleAndTimeBox>
         <Progress
           value={slider}
+          progress={buffer}
           onChange={(e) => {
             setSlider(e.target.value);
             setDrag(e.target.value);

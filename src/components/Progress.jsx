@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./Progress.module.css";
 
-export const Progress = ({ value, onChange, onMouseUp, onTouchEnd }) => {
+export const Progress = ({
+  value,
+  onChange,
+  onMouseUp,
+  onTouchEnd,
+  progress,
+}) => {
   return (
     <div className={styles.container}>
       <input
@@ -16,9 +22,18 @@ export const Progress = ({ value, onChange, onMouseUp, onTouchEnd }) => {
         onMouseUp={onMouseUp}
         onTouchEnd={onTouchEnd}
         style={{
-          background: `linear-gradient(90deg, var(--progressUsed) ${Math.floor(
+          background: `linear-gradient(90deg, var(--progressUsed) 0%, var(--progressUsed) ${Math.floor(
             value
-          )}%, var(--progressLeft) ${Math.floor(value)}%)`,
+          )}%, var(--bufferLoaded) ${Math.floor(
+            value
+          )}%, var(--bufferLoaded) ${Math.floor(
+            progress
+          )}%, var(--progressLeft) ${Math.floor(
+            progress
+          )}%, var(--progressLeft) 100%)`,
+          // background: `linear-gradient(90deg, var(--progressUsed) ${Math.floor(
+          //   value
+          // )}%, var(--progressLeft) ${Math.floor(value)}%)`,
         }}
       />
     </div>
