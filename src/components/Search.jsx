@@ -5,6 +5,7 @@ export const Search = ({ onChange, value, placeholder }) => {
   return (
     <input
       type="text"
+      name="search"
       className={styles.search}
       onChange={onChange}
       value={value}
