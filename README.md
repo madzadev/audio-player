@@ -48,11 +48,13 @@ const tracks = [
 <Player trackList={tracks} />
 ```
 
-`trackList` is the mandatory prop and requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
+The only mandatory prop is `trackList` and it requires to pass in an array consisting of objects with `url`, `title` and `tags` keys.
 
 ## Options
 
-The default values of available options props are displayed.
+There are multiple optional props you can use to configure the player.
+
+The default values of them are displayed below.
 
 ```javascript
 <Player
