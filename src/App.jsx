@@ -57,7 +57,7 @@ const Player = ({
   includeSearch = true,
   showPlaylist = true,
   sortTracks = true,
-  autoPlayNextTrack = true,
+  autoPlayNextTrack = false,
   customColorScheme = {},
 }) => {
   const [audio, setAudio] = useState(null);
@@ -154,7 +154,13 @@ const Player = ({
       if (shuffled) {
         playlist = shufflePlaylist(playlist);
       }
-      looped ? play() : autoPlayNextTrack && !looped && next();
+      if (looped) {
+        play();
+      } else if (autoPlayNextTrack && !looped) {
+        next();
+      } else {
+        setIsPlaying(false);
+      }
     }
   }, [hasEnded]);
 
