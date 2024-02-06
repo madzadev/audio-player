@@ -90,6 +90,7 @@ const colors = {
   progressSlider: "#9440f3",
   progressUsed: "#ffffff",
   progressLeft: "#151616",
+  bufferLoaded: "#202222";
   volumeSlider: "#9440f3",
   volumeUsed: "#ffffff",
   volumeLeft: "#151616",
