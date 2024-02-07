@@ -143,8 +143,7 @@ const App = () => {
         <code>https://website.com/yourtrack.mp3</code>).
       </p>
       <p className="note">
-        This project is under MIT license, so be free to check it out and{" "}
-        <a href="https://github.com/madzadev/audio-player">contribute</a>!
+        This project is under MIT license, so be free to check it out!
       </p>
 
       <Footer />
