@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      <p>
+      <p className={styles.credits}>
         Player component and music created by{" "}
         <a
           className="link"
@@ -14,6 +14,7 @@ const Footer = () => {
         >
           Madza
         </a>
+        !
       </p>
       <p>
         Have a suggestion?{" "}

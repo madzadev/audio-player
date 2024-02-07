@@ -4,9 +4,12 @@
   color: #303030;
   padding: 10px 20px;
   font-size: 16px;
-  font-weight: bold;
 }
 
 .wrapper p {
   margin: 10px;
+}
+
+.credits {
+  font-weight: 600;
 }
