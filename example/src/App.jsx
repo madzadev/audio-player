@@ -39,12 +39,12 @@ const App = () => {
     <Wrapper>
       <Header />
       <Player trackList={tracks} />
-      <h1>Installation</h1>
+      <h1 className="title">Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/audio-player`}
       </SyntaxHighlighter>
 
-      <h1>Usage</h1>
+      <h1 className="title">Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`import Player from '@madzadev/audio-player'
         import '@madzadev/audio-player/dist/index.css'`}
@@ -79,7 +79,7 @@ const App = () => {
         <code>url</code>, <code>title</code> and <code>tags</code> keys.
       </p>
 
-      <h1>Options</h1>
+      <h1 className="title">Options</h1>
       <p className="note">
         There are multiple optional props you can use to configure the player.
       </p>
@@ -95,7 +95,7 @@ const App = () => {
       />`}
       </SyntaxHighlighter>
 
-      <h1>Color schemas</h1>
+      <h1 className="title">Color schemas</h1>
       <p className="note">
         You can customize the design of the player by editing the{" "}
         <code>colors</code> object below.
@@ -135,7 +135,7 @@ const App = () => {
       />`}
       </SyntaxHighlighter>
 
-      <h1>Final notes</h1>
+      <h1 className="title">Final notes</h1>
       <p className="note">
         The audio files can be stored and accessed both locally in your project
         via file path (e.g., <code>public/yourtrack.mp3</code>) or using
