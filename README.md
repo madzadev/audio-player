@@ -114,3 +114,5 @@ const colors = {
 ## Final notes
 
 It's recommended to use CMS like [Contentful](https://www.contentful.com) to manage your audio files and access them via API.
+
+The project is under MIT license, so be free to check it out and contribute!

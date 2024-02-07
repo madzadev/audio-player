@@ -141,6 +141,11 @@ const App = () => {
         <a href="https://www.contentful.com">Contentful</a> to manage your audio
         files and access them via API.
       </p>
+      <p className="note">
+        The project is under MIT license, so be free to check it out and{" "}
+        <a href="https://github.com/madzadev/audio-player">contribute</a>!
+      </p>
+
       <Footer />
     </Wrapper>
   );
