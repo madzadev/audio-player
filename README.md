@@ -115,4 +115,4 @@ const colors = {
 
 The audio files can be stored and accessed both locally in your project via file path (e.g., `public/yourtrack.mp3`) or using external host and providing direct URL to the source (e.g., `https://website.com/yourtrack.mp3`).
 
-The project is under MIT license, so be free to check it out and contribute!
+This project is under MIT license, so be free to check it out and contribute!
