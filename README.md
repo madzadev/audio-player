@@ -113,6 +113,6 @@ const colors = {
 
 ## Final notes
 
-It's recommended to use CMS like [Contentful](https://www.contentful.com) to manage your audio files and access them via API.
+The audio files can be stored and accessed both locally in your project via file path (e.g., `public/yourtrack.mp3`) or using external host and providing direct URL to the source (e.g., `https://website.com/yourtrack.mp3`).
 
 The project is under MIT license, so be free to check it out and contribute!
