@@ -87,10 +87,6 @@ const Player = ({
     });
   });
 
-  for (const [variable, value] of Object.entries(customColorScheme)) {
-    document.documentElement.style.setProperty(`--${variable}`, value);
-  }
-
   useEffect(() => {
     const audio = new Audio(trackList[curTrack].url);
     audio.load();
@@ -122,6 +118,10 @@ const Player = ({
 
     setAudio(audio);
     setTitle(trackList[curTrack].title);
+
+    for (const [variable, value] of Object.entries(customColorScheme)) {
+      document.documentElement.style.setProperty(`--${variable}`, value);
+    }
 
     return () => {
       audio.removeEventListener("loadeddata", setAudioData);
