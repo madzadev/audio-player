@@ -83,27 +83,27 @@ Include only those properties, that you want to customize.
 
 ```javascript
 const colors = {
-  tagsBackground: "#9440f3",
-  tagsText: "#ffffff",
-  tagsBackgroundHoverActive: "#2cc0a0",
-  tagsTextHoverActive: "#ffffff",
-  searchBackground: "#18191f",
-  searchText: "#ffffff",
-  searchPlaceHolder: "#575a77",
-  playerBackground: "#18191f",
-  titleColor: "#ffffff",
-  timeColor: "#ffffff",
-  progressSlider: "#9440f3",
-  progressUsed: "#ffffff",
-  progressLeft: "#151616",
-  bufferLoaded: "#202222",
-  volumeSlider: "#9440f3",
-  volumeUsed: "#ffffff",
-  volumeLeft: "#151616",
-  playlistBackground: "#18191f",
-  playlistText: "#575a77",
-  playlistBackgroundHoverActive: "#18191f",
-  playlistTextHoverActive: "#ffffff",
+  --tagsBackground: #3e32e4;
+  --tagsText: #ffffff;
+  --tagsBackgroundHoverActive: #6e65f1;
+  --tagsTextHoverActive: #ffffff;
+  --searchBackground: #18191f;
+  --searchText: #ffffff;
+  --searchPlaceHolder: #575a77;
+  --playerBackground: #18191f;
+  --titleColor: #ffffff;
+  --timeColor: #ffffff;
+  --progressSlider: #3e32e4;
+  --progressUsed: #ffffff;
+  --progressLeft: #151616;
+  --bufferLoaded: #1f212b;
+  --volumeSlider: #3e32e4;
+  --volumeUsed: #ffffff;
+  --volumeLeft: #151616;
+  --playlistBackground: #18191f;
+  --playlistText: #575a77;
+  --playlistBackgroundHoverActive: #18191f;
+  --playlistTextHoverActive: #ffffff;
 };
 ```
 
