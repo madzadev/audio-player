@@ -110,11 +110,17 @@ const Player = ({
     const setAudioVolume = () => setVolume(audio.volume);
     const setAudioEnd = () => setHasEnded(!hasEnded);
 
+    const handleAudioUnload = () => {
+      audio.pause();
+      audio.src = "";
+    };
+
     audio.addEventListener("loadeddata", setAudioData);
     audio.addEventListener("timeupdate", setAudioTime);
     audio.addEventListener("progress", setAudioProgress);
     audio.addEventListener("volumechange", setAudioVolume);
     audio.addEventListener("ended", setAudioEnd);
+    window.addEventListener("beforeunload", handleAudioUnload);
 
     setAudio(audio);
     setTitle(trackList[curTrack].title);
@@ -129,7 +135,7 @@ const Player = ({
       audio.removeEventListener("progress", setAudioProgress);
       audio.removeEventListener("volumechange", setAudioVolume);
       audio.removeEventListener("ended", setAudioEnd);
-      audio.pause();
+      window.removeEventListener("beforeunload", handleAudioUnload);
     };
   }, []);
 
@@ -150,7 +156,6 @@ const Player = ({
 
       return () => {
         audio.removeEventListener("ended", setAudioEnd);
-        pause();
       };
     }
   }, [curTrack]);
@@ -167,10 +172,6 @@ const Player = ({
       } else {
         setIsPlaying(false);
       }
-
-      return () => {
-        pause();
-      };
     }
   }, [hasEnded]);
 
