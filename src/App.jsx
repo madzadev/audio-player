@@ -129,11 +129,12 @@ const Player = ({
       audio.removeEventListener("progress", setAudioProgress);
       audio.removeEventListener("volumechange", setAudioVolume);
       audio.removeEventListener("ended", setAudioEnd);
+      audio.pause();
     };
   }, []);
 
   useEffect(() => {
-    if (audio !== null) {
+    if (audio) {
       audio.src = trackList[curTrack].url;
       audio.load();
 
@@ -149,12 +150,13 @@ const Player = ({
 
       return () => {
         audio.removeEventListener("ended", setAudioEnd);
+        pause();
       };
     }
   }, [curTrack]);
 
   useEffect(() => {
-    if (audio != null) {
+    if (audio) {
       if (shuffled) {
         playlist = shufflePlaylist(playlist);
       }
@@ -165,17 +167,21 @@ const Player = ({
       } else {
         setIsPlaying(false);
       }
+
+      return () => {
+        pause();
+      };
     }
   }, [hasEnded]);
 
   useEffect(() => {
-    if (audio != null) {
+    if (audio) {
       audio.volume = volume;
     }
   }, [volume]);
 
   useEffect(() => {
-    if (audio != null) {
+    if (audio) {
       pause();
       const val = Math.round((drag * audio.duration) / 100);
       const bufferedRanges = audio.buffered;
@@ -203,13 +209,13 @@ const Player = ({
   }, [drag]);
 
   useEffect(() => {
-    if (audio != null) {
+    if (audio) {
       let setAudioEnd;
 
       if (looped) {
         setAudioEnd = () => {
           audio.currentTime = 0;
-          audio.play();
+          play();
         };
       } else {
         setAudioEnd = () => {
@@ -221,6 +227,7 @@ const Player = ({
 
       return () => {
         audio.removeEventListener("ended", setAudioEnd);
+        pause();
       };
     }
   }, [looped]);
