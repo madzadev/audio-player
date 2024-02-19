@@ -227,7 +227,6 @@ const Player = ({
 
       return () => {
         audio.removeEventListener("ended", setAudioEnd);
-        pause();
       };
     }
   }, [looped]);
