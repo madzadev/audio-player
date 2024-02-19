@@ -1,6 +1,6 @@
 {
   "name": "@madzadev/audio-player-example",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@madzadev/audio-player": "^2.1.6",
+    "@madzadev/audio-player": "^2.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "npm:@fengkx/react-syntax-highlighter@15.6.1"
