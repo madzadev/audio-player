@@ -110,17 +110,11 @@ const Player = ({
     const setAudioVolume = () => setVolume(audio.volume);
     const setAudioEnd = () => setHasEnded(!hasEnded);
 
-    const handleAudioUnload = () => {
-      audio.pause();
-      audio.src = "";
-    };
-
     audio.addEventListener("loadeddata", setAudioData);
     audio.addEventListener("timeupdate", setAudioTime);
     audio.addEventListener("progress", setAudioProgress);
     audio.addEventListener("volumechange", setAudioVolume);
     audio.addEventListener("ended", setAudioEnd);
-    window.addEventListener("beforeunload", handleAudioUnload);
 
     setAudio(audio);
     setTitle(trackList[curTrack].title);
@@ -135,7 +129,8 @@ const Player = ({
       audio.removeEventListener("progress", setAudioProgress);
       audio.removeEventListener("volumechange", setAudioVolume);
       audio.removeEventListener("ended", setAudioEnd);
-      window.removeEventListener("beforeunload", handleAudioUnload);
+      audio.pause();
+      audio.src = "";
     };
   }, []);
 
@@ -357,6 +352,7 @@ const Player = ({
               onClick={shuffle}
             />
           </ButtonsBox>
+          <h1>Test</h1>
           <Volume
             value={volume}
             onChange={(e) => {
