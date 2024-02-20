@@ -352,7 +352,6 @@ const Player = ({
               onClick={shuffle}
             />
           </ButtonsBox>
-          <h1>Test</h1>
           <Volume
             value={volume}
             onChange={(e) => {
