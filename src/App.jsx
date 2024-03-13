@@ -31,7 +31,23 @@ import nextBtn from "./icons/next.png";
 import shuffleAllBtn from "./icons/shuffle_all.png";
 import shuffleNoneBtn from "./icons/shuffle_none.png";
 
-const fmtMSS = (s) => new Date(1000 * s).toISOString().substr(15, 4);
+const formatTime = (seconds) => {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+
+  const formattedHours = hours > 0 ? hours.toString() + ":" : "";
+  const formattedMinutes =
+    minutes < 10 && hours > 0
+      ? "0" + minutes.toString() + ":"
+      : minutes.toString() + ":";
+  const formattedSeconds =
+    remainingSeconds < 10
+      ? "0" + remainingSeconds.toString()
+      : remainingSeconds.toString();
+
+  return formattedHours + formattedMinutes + formattedSeconds;
+};
 
 const tracks = [
   {
@@ -322,8 +338,8 @@ const Player = ({
         <TitleAndTimeBox>
           <Title title={title} />
           <Time
-            time={`${!time ? "0:00" : fmtMSS(time)}/${
-              !length ? "0:00" : fmtMSS(length)
+            time={`${!time ? "0:00" : formatTime(time)}/${
+              !length ? "0:00" : formatTime(length)
             }`}
           />
         </TitleAndTimeBox>
