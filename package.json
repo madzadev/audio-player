@@ -34,7 +34,7 @@
     "./dist/index.css": "./dist/style.css"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "vite",

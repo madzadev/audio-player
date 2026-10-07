@@ -13,7 +13,7 @@
 
 ## Requirements
 
-Node.js 18.x / 20+ is required.
+Node.js 24 or later is required.
 
 Tested on React 18.2.0 and NextJS 14.1.0.
 
